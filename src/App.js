@@ -7,7 +7,6 @@ import AboutUsPage from './Pages/AboutUsPage';
 import LodgingDetails from './Pages/LodgingDetails';
 import NewLodging from './Pages/NewLodging';
 
-
 function App() {
   return (
     <div className="App">
