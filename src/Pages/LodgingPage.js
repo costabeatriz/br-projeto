@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import LodgingBox from '../../Components/LodgingBox'
+import LodgingBox from '../Components/LodgingBox'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -18,19 +18,19 @@ const LodgingPage = () => {
 
     return (
         <div>
-            <Link className='btn btn-light btn-sm' to='/items/create'>Add new item</Link>
+            <Link className='btn btn-light btn-sm' to='/'>Add new lodging</Link>
             <div className="row">
-                { lodging.length && (
-                    <>
-                        {
-                            lodging.map(toy => {
-                                return <LodgingBox key={lodging._id} lodging={lodging} />
-                            })
-                        }
-                    </>
-                ) }
-            </div>
-        </div>
+            { lodging.length && (
+        <>
+        {
+            lodging.map(lodgings => {
+                return <LodgingBox key={lodgings._id} lodging={lodgings} />
+            })
+        }
+    </>
+) }
+</div>
+</div>
        
     )
 }
