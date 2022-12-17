@@ -1,0 +1,23 @@
+.navbar{ 
+   display: flex;
+   flex-direction: column;
+   background-image: url(../Images/Volunteer-background.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 900px;
+}
+
+.logo{
+    display: flex;
+    width: 200px;
+}
+
+h2{
+    color: white;
+}
+
+button{
+    background-color: rgb(181, 226, 114);
+    border-style: hidden;
+    color: white;
+}

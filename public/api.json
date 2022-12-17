@@ -2,43 +2,40 @@
     {
         "name":"Hosting with Hope",
         "city":"Limpopo Province",
-        "dolar": 2000,
+        "price": 2000,
         "action":"Animals and Wildlife",
-        "url": "https://outoftownblog.com/wp-content/uploads/2020/07/Bamboo-Airbnb-Bungalow-in-Gerupuk-700x480.jpg",
-        "volunteerJobDescription": "This volunteer program will give you an opportunity to form part of an award winning conservation team and join in the behind the scenes efforts to make real and sustainable changes to preserve and save Africa’s fast deteriorating wildlife population, fauna and flora.",
-        "includeMeals": "Breakfast",
-        "boardingInformation": "Single room",
+        "imageUrl": "https://outoftownblog.com/wp-content/uploads/2020/07/Bamboo-Airbnb-Bungalow-in-Gerupuk-700x480.jpg",
+        "volunteerJobInfo": "This volunteer program will give you an opportunity to form part of an award winning conservation team and join in the behind the scenes efforts to make real and sustainable changes to preserve and save Africa’s fast deteriorating wildlife population, fauna and flora.",
+        "includedMeals": "Breakfast",
+        "lodgingInfo": "Single room",
         "volunteerKit": "TShirt"
         },
     
         {
         "name":"Love&Peace",
-        "City":"Cape Town",
-        "dolar": 1800,
+        "city":"Cape Town",
+        "price": 1800,
         "action":"Community",
-        "url": "https://insideguide.co.za/cape-town/app/uploads/2021/10/best-cabins-in-the-western-cape-the-leopard-valley-eco-retreat-stoep.jpg",
-        "volunteerJobDescription": "Help transform a child’s life is a Public Benefit Organisation based in Hout Bay, Cape Town. Our focus is on providing education to children and adults from the local, historically disadvantaged communities. We believe that quality, holistic education is vital for transformation to take place.",
-        "includeMeals": "Breakfast and dinner",
-        "boardingInformation": "Share with 3 volunteers",
+        "imageUrl": "https://insideguide.co.za/cape-town/app/uploads/2021/10/best-cabins-in-the-western-cape-the-leopard-valley-eco-retreat-stoep.jpg",
+        "volunteerJobInfo": "Help transform a child’s life is a Public Benefit Organisation based in Hout Bay, Cape Town. Our focus is on providing education to children and adults from the local, historically disadvantaged communities. We believe that quality, holistic education is vital for transformation to take place.",
+        "includedMeals": "Breakfast and dinner",
+        "lodgingInfo": "Share with 3 volunteers",
         "volunteerKit": "Tshirt and WaterBottle"
-    
-    
         },
+        
         {
-            "name":"VoluntersHome",
-            "City":"Nyang",
-            "dolar": 1750,
+            "name":"VolunteersHome",
+            "city":"Nyang",
+            "price": 1750,
             "action":"Sports",
-            "url": "https://insideguide.co.za/cape-town/app/uploads/2021/10/best-cabins-in-the-western-cape-the-leopard-valley-eco-retreat-stoep.jpg",
-            "volunteerJobDescription": "Yoga, Meditation, Community Development, Organic Vegetable Gardens.",
-            "includeMeals": "Breakfast, lunch and dinner",
-            "boardingInformation": "Share with 5 volunteers",
+            "imageUrl": "https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/030/905/main/0eac141dbf53cd70dd96dbc0e3175772.jpeg",
+            "volunteerJobInfo": "Yoga, Meditation, Community Development, Organic Vegetable Gardens.",
+            "includedMeals": "Breakfast, lunch and dinner",
+            "lodgingInfo": "Share with 5 volunteers",
             "volunteerKit": "WaterBottle"
         
-        
-            }
+        }
     
-
     ]
 
 
