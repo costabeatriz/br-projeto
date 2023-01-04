@@ -1,30 +1,30 @@
 import { Link } from 'react-router-dom'
-import LodgingBox from '../Components/LodgingBox'
+import ExchangeBox from '../Components/ExchangeBox'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
-const LodgingPage = () => {
+const ExchangePage = () => {
 
-    const [lodging, setLodging] = useState([])
+    const [exchange, setExchange] = useState([])
 
     useEffect(() => {
         axios.get(`https://ironrest.cyclic.app/br-projeto`)
             .then(response => {
-                setLodging(response.data)
+                setExchange(response.data)
             })
             .catch(err => console.log(err))
     }, [])
 
     return (
         <div>
-            <Link className='btn btn-light btn-sm' to='/'>Add new lodging</Link>
+            <Link className='btn btn-light btn-sm' to='/'>Add new Exchange</Link>
             <div className="row">
-            { lodging.length && (
+            { exchange.length && (
         <>
         {
-            lodging.map(lodgings => {
-                return <LodgingBox key={lodgings._id} lodging={lodgings} />
+            exchange.map(exchange => {
+                return <ExchangeBox key={exchange._id} exchange={exchange} />
             })
         }
     </>
@@ -35,4 +35,4 @@ const LodgingPage = () => {
     )
 }
 
-export default LodgingPage
+export default ExchangePage
