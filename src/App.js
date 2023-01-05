@@ -5,7 +5,7 @@ import ExchangePage from './Pages/ExchangePage';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
 import LodgingDetails from './Pages/LodgingDetails';
-import NewLodging from './Pages/NewLodging';
+import NewExchange from './Pages/NewExchange'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path='/' element={ <HomePage /> } />
         <Route path='/lodging' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
-        <Route path='/addnewlodging' element={ <NewLodging /> } />
+        <Route path='/addnewlodging' element={ <NewExchange /> } />
         <Route path='/details' element={ <LodgingDetails /> } />
       </Routes>
 
