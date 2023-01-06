@@ -18,7 +18,10 @@ const ExchangePage = () => {
 
     return (
         <div>
-            <Link className='btn btn-light btn-sm' to='/'>Add new Exchange</Link>
+            <Link to='/addnewexchange'> 
+            <button type='navegate' className='btn btn-primary'>Add new Exchange</button>
+            </Link>
+            
             <div className="row">
             { exchange.length && (
         <>
