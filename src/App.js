@@ -1,18 +1,17 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './Components/Navbar'
+import Header from './Components/Header'
 import ExchangePage from './Pages/ExchangePage';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
 import LodgingDetails from './Pages/LodgingDetails';
-
 import NewExchange from './Pages/NewExchange';
 
 
 function App() {
   return (
     <div className="App">
-     <Navbar />
+     <Header />
      <Routes>
         <Route path='/' element={ <HomePage /> } />
         <Route path='/lodging' element={ <ExchangePage /> } />
