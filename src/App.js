@@ -5,7 +5,9 @@ import ExchangePage from './Pages/ExchangePage';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
 import LodgingDetails from './Pages/LodgingDetails';
-import NewExchange from './Pages/NewExchange'
+
+import NewExchange from './Pages/NewExchange';
+
 
 function App() {
   return (

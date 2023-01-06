@@ -1,7 +1,6 @@
 .navbar{ 
    display: flex;
    flex-direction: column;
-   background-image: url(../Images/Volunteer-background.jpg);
    background-repeat: no-repeat;
    background-size: cover;
    height: 900px;
