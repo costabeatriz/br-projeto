@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const LodgingDetails = () => {
+const ExchangeDetails = () => {
     return (
         <div>
         
@@ -10,4 +10,4 @@ const LodgingDetails = () => {
     )
 }
 
-export default LodgingDetails
+export default ExchangeDetails

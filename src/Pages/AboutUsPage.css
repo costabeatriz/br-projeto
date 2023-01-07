@@ -1,0 +1,40 @@
+.volunteers-img{
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.ourMission-img{
+    border-radius: 100px;
+}
+
+.ourMission{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.ourMission p {
+    width: 500px;
+}
+
+.globe-img{
+    width: 250px;
+}
+.platform{
+    display: flex;
+    flex-direction: row;   
+}
+
+.platform p {
+    width: 500px;  
+}

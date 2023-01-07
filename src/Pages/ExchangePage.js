@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import ExchangeBox from '../Components/ExchangeBox'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import CSS from './ExchangePage.css'
 
 
 const ExchangePage = () => {
@@ -18,10 +19,7 @@ const ExchangePage = () => {
 
     return (
         <div>
-            <Link to='/addnewexchange'> 
-            <button type='navegate' className='btn btn-primary'>Add new Exchange</button>
-            </Link>
-            
+            <h4>Your 2023 adventure begins now</h4>
             <div className="row">
             { exchange.length && (
         <>
