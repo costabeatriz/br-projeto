@@ -1,0 +1,12 @@
+h5{
+    margin-top: 50px;
+}
+
+.questionsBox{
+    margin-left: 0;
+    margin-top: 50px;
+    width: 500px;
+    background-color: rgb(0, 217, 255);
+    border-radius: 10px;
+    text-align: right;
+}

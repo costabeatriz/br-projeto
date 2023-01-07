@@ -4,8 +4,9 @@ import Header from './Components/Header'
 import ExchangePage from './Pages/ExchangePage';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
-import LodgingDetails from './Pages/LodgingDetails';
+import ExchangeDetails from './Pages/ExchangeDetails';
 import NewExchange from './Pages/NewExchange';
+import Agencies from './Pages/AgencyPage';
 
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
      <Header />
      <Routes>
         <Route path='/' element={ <HomePage /> } />
-        <Route path='/lodging' element={ <ExchangePage /> } />
+        <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
-        <Route path='/addnewlodging' element={ <NewExchange /> } />
-        <Route path='/details' element={ <LodgingDetails /> } />
+        <Route path='/addnewexchange' element={ <NewExchange /> } />
+        <Route path='/details' element={ <ExchangeDetails /> } />
+        <Route path='/agencies' element={ < Agencies /> } />
       </Routes>
 
     </div>
