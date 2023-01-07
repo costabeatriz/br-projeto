@@ -1,0 +1,13 @@
+h1{
+    color: black;
+}
+
+span{
+    display: inline;
+}
+
+.input-group mb-3 {
+    align-items: center;
+    align-self: auto;
+
+}
