@@ -8,6 +8,7 @@ import CSS from './ExchangePage.css'
 const ExchangePage = () => {
 
     const [exchange, setExchange] = useState([])
+    const [refreshExchange, setRefreshExchange] = useState(false)
 
     useEffect(() => {
         axios.get(`https://ironrest.cyclic.app/br-projeto`)
@@ -15,7 +16,7 @@ const ExchangePage = () => {
                 setExchange(response.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [refreshExchange])
 
     return (
         <div>
@@ -25,7 +26,7 @@ const ExchangePage = () => {
         <>
         {
             exchange.map(exchange => {
-                return <ExchangeBox key={exchange._id} exchange={exchange} />
+                return <ExchangeBox refreshExchange={refreshExchange} setRefreshExchange={setRefreshExchange} key={exchange._id} exchange={exchange} />
             })
         }
     </>
