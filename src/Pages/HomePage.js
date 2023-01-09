@@ -10,10 +10,10 @@ import Quality from '../Images/qualityChecked.svg'
 const HomePage = () => {
     return (
         <div>
-        <video id="video" autoplay="" loop="" preload="" muted="" playsinline="" >
+        <video id="video" autoPlay="" loop="" preload="" muted="" playsInline="" >
         <source type="video/mp4" src="https://www.volunteerworld.com/static/banner.mp4"/>
         </video>
-        <div className='content'>
+        <div className='contentHP'>
         <div>
         <h4>Your benefits</h4>
         <p>What makes us different</p>

@@ -5,8 +5,10 @@ const Agencies = () => {
     return (
     <div>
     <div className='content'>
-    <h5>Ready to BRV?</h5>
-    <Link to='/'><button className='addExchange-btn'>Add new Exchange</button></Link>
+    <h5>Ready to promote at BRV?</h5>
+    <Link to='/addnewexchange'>
+    <button type='button' className='addExchange-btn'>Add new Exchange</button>
+    </Link>
     <div className='questionsBox'>
     <h5>Your questions, answered</h5>
     <p><b>Is my agency rigth for BRV?</b></p>
@@ -19,10 +21,14 @@ const Agencies = () => {
     <p>BRV typicaly collects a flat service fee of 5% of the exchange subtotal when you get paid. We also collect a fee from volunteers when they book.</p>
     </div>
     </div>
-</div>
-           
-       
+</div>     
     )
 }
 
 export default Agencies
+
+/*<Link to='/addnewexchange'>Add 
+    </Link>
+    <Link to='/addnewexchange'>
+    <button type='button' onClick={ () => {console.log('entrei')}} className='addExchange-btn'>Add new Exchange</button>
+    </Link>*/
