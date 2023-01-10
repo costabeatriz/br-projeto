@@ -10,7 +10,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
     const [toExchange, setToExchange] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/br-projeto`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject`)
         .then(response => {
             setToExchange(response.data)
         })
@@ -18,7 +18,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
     },[])
 
     const deleteExchange = exchangeId => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/br-projeto/${exchangeId}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/brproject/${exchangeId}`)
             .then(response => {
                 setRefreshExchange(!refreshExchange)
             })
@@ -36,7 +36,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
                     <p className="card-text"> ACTION: {exchange.action }</p>
                     <p className="card-text"> FROM: {exchange.price} USD</p>
                     <button className="btn btn-danger" onClick={() => deleteExchange(exchange._id)}>DELETE</button> 
-                    <button>EDIT</button>
+                    <Link to='/edit/id'><button>EDIT</button></Link>
                     <button className="details-btn">DETAILS</button>
                 </div>
                 
