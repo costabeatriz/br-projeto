@@ -9,9 +9,21 @@ import ExchangeDetails from './Pages/ExchangeDetails';
 import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
+import SearchExchange from './Components/SearchExchange';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [agencyData, setAgencyData] = useState('')
+
+  const searchAgency = str => {
+    const searchResult = agencyData.filter(agency => {
+      return agency.name.toLowercase().starstWith(str.toLowercase())
+    })
+
+    setAgencyData(searchResult)
+  }
 
   return (
     <div className="App">
