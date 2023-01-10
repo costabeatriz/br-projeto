@@ -12,7 +12,7 @@ const ExchangePage = () => {
     const [refreshExchange, setRefreshExchange] = useState(false)
 
     useEffect(() => {
-        axios.get(`https://ironrest.cyclic.app/br-projeto`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject`)
             .then(response => {
                 setExchange(response.data)
             })
