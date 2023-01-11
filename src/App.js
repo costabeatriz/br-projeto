@@ -22,7 +22,7 @@ function App() {
         <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
         <Route path='/addnewexchange' element={ <NewExchange /> } />
-        <Route path='/details' element={ <ExchangeDetails /> } />
+        <Route path='/details/exchangeId' element={ <ExchangeDetails /> } />
         <Route path='/agencies' element={ < Agencies /> } />
         <Route path='/edit/id' element={ < EditExchange /> } />
       </Routes>
