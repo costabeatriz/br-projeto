@@ -25,7 +25,7 @@ function App() {
         <Route path='/addnewexchange' element={ <NewExchange /> } />
         <Route path='/details/exchangeId' element={ <ExchangeDetails /> } />
         <Route path='/agencies' element={ < Agencies /> } />
-        <Route path='/edit/id' element={ < EditExchange /> } />
+        <Route path='/edit/:id' element={ < EditExchange /> } />
 
       </Routes>
 
