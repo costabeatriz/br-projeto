@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const ExchangeDetails = () => {
-    const { exchangeId } = useParams()
+    const { id } = useParams()
     const [exchange, setExchange] = useState(null)
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${exchangeId}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
+
         .then(response => {
-            setExchange(response.data)
+            setExchange(response.exchange)
         })
         .catch(err => console.log(err))
     }, [])
