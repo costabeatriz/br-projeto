@@ -23,7 +23,7 @@ const EditExchange = () => {
     useEffect(() =>{
 
 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/edit/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
 
             .then (response => {
                 let {

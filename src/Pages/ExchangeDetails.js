@@ -7,12 +7,12 @@ const ExchangeDetails = () => {
     const [exchange, setExchange] = useState(null)
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/details/${exchangeId}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${exchangeId}`)
         .then(response => {
             setExchange(response.data)
         })
         .catch(err => console.log(err))
-    }, [id])
+    }, [])
 
         return (
         <div>
