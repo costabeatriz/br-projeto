@@ -35,6 +35,7 @@ const ExchangePage = () => {
                 <SearchExchange searchAgency={searchAgency}/>
             { exchange.length !== 0 ? (
         <>
+        <SearchExchange/>
         {
             searchResult.map(exchange => {
                 return <ExchangeBox refreshExchange={refreshExchange} setRefreshExchange={setRefreshExchange} key={exchange._id} exchange={exchange} />
