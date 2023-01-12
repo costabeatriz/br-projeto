@@ -38,6 +38,21 @@ const NewExchange = () => {
         axios.post(`${process.env.REACT_APP_API_URL}/brproject`, newOneExchange)
             .then(response => {
                 navigate('/addnewexchange')
+                setAgency('')
+                setCity('')
+                setPrice('')
+                setAction('')
+                setImageUrl('https://via.placeholder.com/400x500')
+                setVolunteerJobInfo('')
+                setIncludedMeals('')
+                setVolunteerKit('')
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Exchange successfully uptaded!',
+                    icon: 'sucess',
+                    confirmButtonText: 'Cool'
+                  })
+
             })
             .catch(err => console.log(err))
 
