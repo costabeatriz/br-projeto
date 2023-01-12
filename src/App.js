@@ -9,7 +9,8 @@ import ExchangeDetails from './Pages/ExchangeDetails';
 import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
-import { useState } from 'react';
+import SearchExchange from './Components/SearchExchange';
+
 
 
 function App() {

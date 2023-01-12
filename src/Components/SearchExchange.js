@@ -1,16 +1,11 @@
 import {Divider, Input} from 'antd';
 import React, { useState } from 'react';
-
 const SearchExchange = (props) => {
     const {searchAgency} = props;
-
     const searchHandle = (e) => {
         searchAgency(e.target.value);
     }
-
-
     return (
-    
         <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">Search your Adventure</span>
                             <input
@@ -22,11 +17,7 @@ const SearchExchange = (props) => {
                                 id="Agency"
                                 onChange={searchHandle}
                             />
-
 </div>
- 
-
     )
 }
-
 export default SearchExchange

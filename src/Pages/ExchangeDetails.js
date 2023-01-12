@@ -8,11 +8,12 @@ const ExchangeDetails = () => {
 
     useEffect (() => { 
         axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
+
         .then(response => {
             setExchange(response.exchange)
         })
         .catch(err => console.log(err))
-    }, [id])
+    }, [])
 
         return (
         <div>

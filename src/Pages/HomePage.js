@@ -6,6 +6,7 @@ import BestPrice from '../Images/bestPrice.svg'
 import Ethical from '../Images/ethical.svg'
 import FreeService from '../Images/freeService.svg'
 import Quality from '../Images/qualityChecked.svg'
+import Coments from '../Components/Comments'
 
 const HomePage = () => {
     return (
@@ -36,6 +37,7 @@ const HomePage = () => {
         <p>Best Price Guarantee</p>
         </article>
         </div>
+        <Coments/>
         </div>
         </div>
        
