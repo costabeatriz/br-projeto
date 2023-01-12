@@ -10,32 +10,39 @@ const ExchangePage = () => {
 
     const [exchange, setExchange] = useState([])
     const [refreshExchange, setRefreshExchange] = useState(false)
+    const [searchResult, setSearchResult] =useState(exchange)
 
     useEffect(() => {
-        axios.get(`https://ironrest.cyclic.app/br-projeto`)
+        axios.get(`${process.env.REACT_APP_API_URL}/brproject`)
             .then(response => {
                 setExchange(response.data)
+                setSearchResult(response.data)
             })
             .catch(err => console.log(err))
-    }, [refreshExchange])
+    }, [refreshExchange]);
 
+    const searchAgency = (p) => {
+        const agencyFilter = exchange.filter(agency  => {
+            return agency.agency.toLowerCase().startsWith(p.toLowerCase());
+        }) 
+        setSearchResult(agencyFilter)
+    }
+    console.log(exchange)
     return (
         <div>
             <h4>Your 2023 adventure begins now</h4>
             <div className="row">
-            
-            { exchange.length && (
+                <SearchExchange searchAgency={searchAgency}/>
+            { exchange.length !== 0 ? (
         <>
         <SearchExchange/>
         {
-            exchange.map(exchange => {
+            searchResult.map(exchange => {
                 return <ExchangeBox refreshExchange={refreshExchange} setRefreshExchange={setRefreshExchange} key={exchange._id} exchange={exchange} />
             })
         }
-        
-
-    </>
-) }
+        </>
+):<h1>Loading</h1> }
 </div>
 </div>
        

@@ -10,20 +10,10 @@ import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
 import SearchExchange from './Components/SearchExchange';
-import { useState } from 'react';
+
 
 
 function App() {
-
-  const [agencyData, setAgencyData] = useState('')
-
-  const searchAgency = str => {
-    const searchResult = agencyData.filter(agency => {
-      return agency.name.toLowercase().starstWith(str.toLowercase())
-    })
-
-    setAgencyData(searchResult)
-  }
 
   return (
     <div className="App">
@@ -33,9 +23,10 @@ function App() {
         <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
         <Route path='/addnewexchange' element={ <NewExchange /> } />
-        <Route path='/details' element={ <ExchangeDetails /> } />
+        <Route path='/details/exchangeId' element={ <ExchangeDetails /> } />
         <Route path='/agencies' element={ < Agencies /> } />
-        <Route path='/:id' element={ < EditExchange /> } />
+        <Route path='/edit/id' element={ < EditExchange /> } />
+
       </Routes>
 
     </div>

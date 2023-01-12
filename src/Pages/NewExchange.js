@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom"
-import { useState } from 'react'
-import axios from 'axios'
-import css from '../Pages/NewExchange.css'
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import axios from 'axios';
+import css from '../Pages/NewExchange.css';
+import Swal from 'sweetalert2';
+
 
 const NewExchange = () => {
 
@@ -33,7 +35,7 @@ const NewExchange = () => {
 
         }
 
-        axios.post(`${process.env.REACT_APP_API_URL}/br-projeto`, newOneExchange)
+        axios.post(`${process.env.REACT_APP_API_URL}/brproject`, newOneExchange)
             .then(response => {
                 navigate('/addnewexchange')
             })
@@ -178,6 +180,7 @@ const NewExchange = () => {
                         </div>
                         <div className="mb-3">
                             <button type='submit' className='btn btn-primary'>Submit</button>
+                            
                         </div>
                     </form>
 
