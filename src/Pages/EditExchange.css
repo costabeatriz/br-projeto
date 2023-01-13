@@ -1,17 +1,15 @@
-.CreateExchange h1{
+.EditExchange h1{
     color: gray;
     font-size: 25px;
     margin-bottom: 50px;
 }
 
-.CreateExchange{
+.EditExchange{
     margin: 100px;
     background-color: rgb(226, 224, 224);
     border-radius: 60px;
-    padding-bottom: 50px;
-    color: gray;
 }
 
-.CreateExchange span{
+.EditExchange span{
     color: gray;
 }

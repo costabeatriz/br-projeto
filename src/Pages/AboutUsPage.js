@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom'
 import VolunteerImage from '../Images/Volunteer-background.jpg'
+import Background from '../Images/background.png'
 import CSS from './AboutUsPage.css'
 import OurMission from '../Images/ourMission.webp'
 import Globe from '../Images/icon-globe.svg'
+import Computer from '../Images/computer.png'
 
 const AboutUsPage = () => {
     return (
            <div className='aboutUs'> 
-            <img src={VolunteerImage} alt='volunteerImage' className='volunteers-img'/>
+            <img src={Background} alt='Background' className='background'/>
             <div className='content'>
             <div className='ourMission'>
-            <img src={OurMission} alt='ourMissionImage' className='ourMission-img'/> 
+            <img src={Computer} alt='ourMissionImage' className='computer-img'/> 
             <div>
             <h4> OUR MISSION</h4>
             <p>It happens hundreds of times each month: a volunteer 

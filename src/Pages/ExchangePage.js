@@ -22,9 +22,10 @@ const ExchangePage = () => {
         })
         setSearchResult(agencyFilter)
     }
-    console.log(exchange)
+    
     return (
-        <div>
+        <div className='exchangePage'>
+            <div className='title'>
             <h4>Your 2023 adventure begins now</h4>
             <div className="row">
                 <SearchExchange searchAgency={searchAgency}/>
@@ -41,6 +42,7 @@ const ExchangePage = () => {
 <h1>Loading</h1> 
 
 }
+</div>
 </div>
 </div>
     )

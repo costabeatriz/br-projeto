@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios, { formToJSON } from "axios"
 import Swal from "sweetalert2"
-
+import CSS from './Comments.css'
 
 const Coments = (props) => {
 
@@ -50,30 +50,31 @@ const Coments = (props) => {
                 <form onSubmit={handleSubmitComent}>
                     <div className="mb-3">
                        <textarea class="form-control" placeholder="Tell us about your latest adventure here with us!" id="floatingTextarea" name="text"
-                        id="text"
-                        cols="200"
+                        cols="30"
                         rows="3"
                         value={text}
                         onChange={e => setText(e.target.value)}/>
                     </div>
                     <div className="mb-3">
-                            <button type='submit' className='btn btn-primary'>Submit Coment!</button>
+                            <button type='submit' className='submit-btn'>Submit comment!</button>
                         </div>
                 </form>
                 <div>
                     {comments && (
-                        <> {
+                        <div className="container">
+                            <div className="row "> {
                             comments.map(comment => {
                                 return (
-                                    <div>
+                                    <article className="col-4 bg-white rounded mt-2 mx-2" id="colFormLabelSm"
+                                    >
                                         <p>{comment.text}</p>
-                                        <p>{comment.createAt}</p>
-                                    </div>
+                                        <span>{comment.createAt}</span>
+                                    </article>
                                 )
                             })
                         }
-                        
-                        </>
+                        </div>
+                        </div>
                     )}
 
                 </div>
