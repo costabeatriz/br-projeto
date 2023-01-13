@@ -64,16 +64,16 @@ const NewExchange = () => {
         <div className="CreateExchange">
             <div className="row">
                 <div className="col">
-                    <h1> Add a New Exchange</h1>
+                    <h1> ADD A NEW EXCHANGE</h1>
                 </div>
             </div>
             <div className="row">
                 <div className="col">
-                    <img width={600} src={imageUrl ? imageUrl : 'https://via.placeholder.com/400x500'} alt="ImagePreview" />
+                    <img width={600} src={imageUrl ? imageUrl : 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
                 </div>
 
                 <div className="col">
-                    Exchange Information!
+                    
                     <form onSubmit={handleSubmit}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Agency</span>
@@ -103,7 +103,7 @@ const NewExchange = () => {
                             />
                         </div>
                         <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Price: $:</span>
+                        <span className="input-group-text" id="basic-addon1">Price $:</span>
                             <input
                                 type="number"
                                 className="form-control"
@@ -194,7 +194,7 @@ const NewExchange = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <button type='submit' className='btn btn-primary'>Submit</button>
+                            <button type='submit' className='submit-btn'>Submit</button>
                             
                         </div>
                     </form>

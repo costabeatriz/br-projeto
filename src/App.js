@@ -5,7 +5,7 @@ import Header from './Components/Header'
 import ExchangePage from './Pages/ExchangePage';
 import HomePage from './Pages/HomePage';
 import AboutUsPage from './Pages/AboutUsPage';
-import ExchangeDetails from './Pages/ExchangeDetails';
+import ExchangeDetails from './Pages/ExchangeDetailsPage';
 import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';

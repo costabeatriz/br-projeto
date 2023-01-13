@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import CSS from './EditExchange.css'
 
 
 const EditExchange = () => {
@@ -85,7 +86,7 @@ const EditExchange = () => {
         <div className="EditExchange">
             <div className="row">
                 <div className="col">
-                    <h1> Edit Exchange</h1>
+                    <h1> EDIT EXCHANGE INFO</h1>
                 </div>
             </div>
             <div className="row">
@@ -94,7 +95,7 @@ const EditExchange = () => {
                 </div>
 
                 <div className="col">
-                    Exchange Information!
+        
                     <form onSubmit={handleSubmit}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Agency</span>
@@ -215,7 +216,7 @@ const EditExchange = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <button type='submit' className='btn btn-primary'>Submit</button>
+                            <button type='submit' className='submit-btn'>Submit</button>
                         </div>
                     </form>
 
