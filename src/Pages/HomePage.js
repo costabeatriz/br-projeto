@@ -10,7 +10,7 @@ import Coments from '../Components/Comments'
 
 const HomePage = () => {
     return (
-        <div>
+        <div className='homePage'>
         <video id="video" autoPlay="" loop="" preload="" muted="" playsInline="" >
         <source type="video/mp4" src="https://www.volunteerworld.com/static/banner.mp4"/>
         </video>
