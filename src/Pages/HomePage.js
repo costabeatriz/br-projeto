@@ -7,12 +7,17 @@ import Ethical from '../Images/ethical.svg'
 import FreeService from '../Images/freeService.svg'
 import Quality from '../Images/qualityChecked.svg'
 import Coments from '../Components/Comments'
+import { useParams } from "react-router-dom"
+
 
 const HomePage = () => {
+
+    const {comment} = useParams()
+
     return (
         <div>
-        <video id="video" autoPlay="" loop="" preload="" muted="" playsInline="" >
-        <source type="video/mp4" src="https://www.volunteerworld.com/static/banner.mp4"/>
+        <video className=""id="video" autoPlay loop preload muted playsInline >
+        <source type="video/mp4"src="https://www.volunteerworld.com/static/banner.mp4"/>
         </video>
         <div className='contentHP'>
         <div>
