@@ -50,8 +50,7 @@ const Coments = (props) => {
                 <h2> Coments</h2>
                 <form onSubmit={handleSubmitComent}>
                     <div className="mb-3">
-                       <textarea name="text"
-                        id="text"
+                       <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="text"
                         cols="200"
                         rows="3"
                         value={text}
