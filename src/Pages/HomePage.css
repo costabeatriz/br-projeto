@@ -1,10 +1,11 @@
 
 video{
-    width: 95vw;
-    height: 50vh;
+    margin: 50px;
+    width: 100vw;
+    height: 70vh;
     object-fit: cover;
-    top: 0;
-    left: 0;
+    border-radius: 50px;
+
 }
 
 .contentHP{
@@ -16,12 +17,11 @@ video{
     border-radius: 50px;
     z-index: 3;
     color: grey;
-    background-color: rgba(159, 34, 208, 0.175);
 }
 
 h4{
     padding-top: 0;
-    color:rgb(127, 201, 14);
+    color:rgb(240, 128, 68);
 }
 
 .articles{
@@ -34,4 +34,8 @@ article{
 
 .articles img {
     width: 80px;
+}
+
+.homePage{
+    background-color: rgba(228, 223, 223, 0.849);
 }

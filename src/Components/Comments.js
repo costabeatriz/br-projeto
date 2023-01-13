@@ -47,10 +47,9 @@ const Coments = (props) => {
     return (
         <div className="row Comments">
             <div className="col">
-                <h2> Coments</h2>
                 <form onSubmit={handleSubmitComent}>
                     <div className="mb-3">
-                       <textarea name="text"
+                       <textarea class="form-control" placeholder="Tell us about your latest adventure here with us!" id="floatingTextarea" name="text"
                         id="text"
                         cols="200"
                         rows="3"

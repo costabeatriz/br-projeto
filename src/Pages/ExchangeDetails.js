@@ -10,7 +10,7 @@ const ExchangeDetails = () => {
         axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
 
         .then(response => {
-            setExchange(response.exchange)
+            setExchange(response.data)
         })
         .catch(err => console.log(err))
     }, [])
@@ -25,13 +25,13 @@ const ExchangeDetails = () => {
             <img width={400} src={ exchange.imageUrl ? exchange.imageUrl:'https://via.placeholder.com/400x500'} alt='exchange'></img>
         </div>
         <div className='col'>  
-        <p>{exchange.agency}</p>
-        <p>{exchange.city}</p>
-        <p>{exchange.price}</p>
-        <p>{exchange.volunteerJobInfo}</p>
-        <p>{exchange.includedMeals}</p>
-        <p>{exchange.lodgingInfo}</p>  
-        <p>{exchange.volunteerKit}</p>  
+        <p>agency: {exchange.agency}</p>
+        <p>city: {exchange.city}</p>
+        <p>price: {exchange.price}</p>
+        <p>volunteer info: {exchange.volunteerJobInfo}</p>
+        <p>included meals: {exchange.includedMeals}</p>
+        <p>lodging info: {exchange.lodgingInfo}</p>  
+        <p>what does it come with your volunteer kit? {exchange.volunteerKit}</p>  
         </div>
         </>
         ) : (

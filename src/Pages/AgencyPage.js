@@ -5,7 +5,7 @@ const Agencies = () => {
     return (
     <div>
     <div className='content'>
-    <h5>Ready to promote at BRV?</h5>
+    <h5>Ready to promote your agency at BRV?</h5>
     <Link to='/addnewexchange'>
     <button type='button' className='addExchange-btn'>Add new Exchange</button>
     </Link>

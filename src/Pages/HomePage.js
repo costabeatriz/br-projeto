@@ -15,6 +15,7 @@ const HomePage = () => {
     const {comment} = useParams()
 
     return (
+
         <div>
         <video className=""id="video" autoPlay loop preload muted playsInline >
         <source type="video/mp4"src="https://www.volunteerworld.com/static/banner.mp4"/>

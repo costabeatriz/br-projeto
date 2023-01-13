@@ -1,11 +1,15 @@
 .card-img{
-    height: 160px;
-    width: 200px;
+    height: 250px;
+    width: 300px;
 }
 .card{
     width: 250px;
     margin-top: 50px;
-    
+
+}
+
+.card-body{
+    border: none;
 }
 
 .card button{
