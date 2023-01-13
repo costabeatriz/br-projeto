@@ -3,21 +3,22 @@ import axios, { formToJSON } from "axios"
 import Swal from "sweetalert2"
 
 
-const Coments = () => {
+const Coments = (props) => {
 
     const [text, setText] = useState('')
     const [name, setName] = useState('')
-    const [ comments, setComments] = useState ([])
+    const [comments, setComments] = useState ([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/brprojectComents`)
-            .then(response => {
-                return comments
-                setComments(comments)
-
-            })
-            .catch(err => console.log(err))
-    })
+            .then(response => {            
+                setComments(response.data)
+                })
+            
+                .catch(err => console.log(err))          
+            },[])
+            
+    
 
     const handleSubmitComent = e => {
         e.preventDefault()
@@ -44,7 +45,7 @@ const Coments = () => {
     }
 
     return (
-        <div className="row">
+        <div className="row Comments">
             <div className="col">
                 <form onSubmit={handleSubmitComent}>
                     <div className="mb-3">
@@ -67,7 +68,6 @@ const Coments = () => {
                                     <div>
                                         <p>{comment.text}</p>
                                         <p>{comment.createAt}</p>
-
                                     </div>
                                 )
                             })
