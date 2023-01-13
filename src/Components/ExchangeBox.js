@@ -25,19 +25,19 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
             .catch(err => console.log(err))
         }  
     return (
-        <div className="col Lodging mb-4">
-            <div className="card">
-                <Link to={exchange._id}>
+        <div className="col Agency mb-4">
+            <div className="card mb-4 border-0">
+                <Link to={`/details/${exchange._id}`}>
                     <img src={exchange.imageUrl} className="card-img" alt="..." />
                 </Link>
                 <div className="card-body">
-                    <h5 className="card-title"><Link to={exchange._id}>{exchange.agency}</Link></h5>
-                    <p className="card-text"> CITY: {exchange.city }</p>
-                    <p className="card-text"> ACTION: {exchange.action }</p>
-                    <p className="card-text"> FROM: {exchange.price} USD</p>
-                    <button className="btn btn-danger" onClick={() => deleteExchange(exchange._id)}>DELETE</button> 
+                    <h6 className="card-title bold"> {exchange.agency}</h6>
+                    <p className="card-text">  {exchange.city }</p>
+                    <p className="card-text">  {exchange.action }</p>
+                    <p className="card-text">  {exchange.price} USD</p>
+                    <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> 
                     <Link to={`/edit/${exchange._id}`}><button>EDIT</button></Link>
-                    <button className="details-btn">DETAILS</button>
+                    <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
                 </div>
                 
             </div>

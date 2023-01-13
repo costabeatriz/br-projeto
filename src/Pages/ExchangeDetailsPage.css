@@ -1,0 +1,19 @@
+.exchangeDetails{
+    padding: 50px;
+    background-color: gray;
+    border-radius: 15px;
+    margin: 150px;
+}
+
+.detailsPage-img{
+    border-radius: 10px;
+}
+
+.exchangeDetails p {
+    text-align: left;
+    color: white;
+}
+
+.exchangeDetails h2{
+    margin-bottom: 40px;
+}

@@ -1,4 +1,10 @@
-h5{
+.agencyPage-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content{
     margin-top: 50px;
 }
 
@@ -6,15 +12,22 @@ h5{
     margin-left: 0;
     margin-top: 50px;
     width: 500px;
-    background-color: rgba(219, 137, 242, 0.486);
+    background-color: gray;
     border-radius: 10px;
     text-align: right;
-    color: gray;
+    color: white;
 }
 
 .addExchange-btn{
-    background-color:rgb(218, 42, 156) ;
+    background-color:rgb(181, 226, 114) ;
     border-radius: 5px;
     align-content: flex-end;
     color: white;
 }
+
+.cardbox{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+background-color: rgb(226, 224, 224);

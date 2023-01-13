@@ -2,9 +2,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    width: 100%;
+    width: 90vw;
     position: fixed;
-   
     top: 0;
     z-index: 3;
 }
@@ -21,7 +20,7 @@
     margin-right: 5px;
     display: flex;
     justify-content: end;
-    width: 100%;
+    width: 90vw;
 }
 h2{
     
@@ -32,7 +31,7 @@ h2{
 button{
     background:none;
     border-style: hidden;
-    color: rgb(181, 226, 114);
+    color: rgb(95, 93, 93);
     margin-right: 5px;
     font-weight: 500;
 }
