@@ -38,3 +38,4 @@ export default Agencies
     <Link to='/addnewexchange'>
     <button type='button' onClick={ () => {console.log('entrei')}} className='addExchange-btn'>Add new Exchange</button>
     </Link>*/
+
