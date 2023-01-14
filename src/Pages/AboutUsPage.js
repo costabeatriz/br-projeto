@@ -5,11 +5,12 @@ import CSS from './AboutUsPage.css'
 import OurMission from '../Images/ourMission.webp'
 import Globe from '../Images/icon-globe.svg'
 import Computer from '../Images/computer.png'
+import Fundo1 from '../Images/Fundo1.jpg'
 
 const AboutUsPage = () => {
     return (
            <div className='aboutUs'> 
-            <img src={Background} alt='Background' className='background'/>
+            <img src={Fundo1} alt='Background' className='background'/>
             <div className='content'>
             <div className='ourMission'>
             <img src={Computer} alt='ourMissionImage' className='computer-img'/> 
