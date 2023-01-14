@@ -39,4 +39,6 @@ article{
 .homePage{
     background-color: rgb(226, 224, 224);
     width: 100vw;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
 }

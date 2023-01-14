@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    justify-content:center;
+    border-top: 2px;
+    border-color: gray;
+    margin-top: 20px;
+}
+
+.logo-footer{
+    width: 40px;
+}
+
+footer p {
+    font-size: 12px;
+}

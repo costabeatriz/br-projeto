@@ -10,6 +10,7 @@ import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
 import SearchExchange from './Components/SearchExchange';
+import Footer from './Components/Footer';
 
 
 
@@ -27,7 +28,7 @@ function App() {
         <Route path='/agencies' element={ < Agencies /> } />
         <Route path='/edit/:id' element={ < EditExchange /> } />
       </Routes>
-
+     <Footer/>
     </div>
   );
 }

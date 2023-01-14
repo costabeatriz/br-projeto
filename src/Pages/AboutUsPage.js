@@ -10,7 +10,7 @@ import Fundo1 from '../Images/Fundo1.jpg'
 const AboutUsPage = () => {
     return (
            <div className='aboutUs'> 
-            <img src={Fundo1} alt='Background' className='background'/>
+            <img src={Background} alt='Background' className='background'/>
             <div className='content'>
             <div className='ourMission'>
             <img src={Computer} alt='ourMissionImage' className='computer-img'/> 
