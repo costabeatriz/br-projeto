@@ -68,7 +68,7 @@ const EditExchange = () => {
         }
 
 
-        axios.put(`${process.env.REACT_APP_API_URL}/brproject/edit/${id}`, updateExchange)
+        axios.put(`${process.env.REACT_APP_API_URL}/brproject/${id}`, updateExchange)
 
             .then(response => {
                 Swal.fire({
