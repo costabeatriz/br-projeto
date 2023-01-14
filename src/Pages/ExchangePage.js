@@ -27,7 +27,7 @@ const ExchangePage = () => {
         <div className='exchangePage'>
             <div className='title'>
             <h4>Your 2023 adventure begins now</h4>
-            <div className=" row col-6 bg-white rounded mt-2 mx-2 ">
+            <div className=" row col-10 bg-white rounded mt-2 mx-2 ">
                 <SearchExchange searchAgency={searchAgency}/>
             { exchange.length !== 0 ? (
         <>

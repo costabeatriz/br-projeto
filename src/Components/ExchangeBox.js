@@ -26,7 +26,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
         }  
     return (
         <div className="col Agency mb-4">
-            <div className="card mb-4 border-0">
+            <div className="card mb-6 border-0">
                 <Link to={`/details/${exchange._id}`}>
                     <img src={exchange.imageUrl} className="card-img" alt="..." />
                 </Link>
