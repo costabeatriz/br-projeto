@@ -8,6 +8,7 @@ import FreeService from '../Images/freeService.svg'
 import Quality from '../Images/qualityChecked.svg'
 import Coments from '../Components/Comments'
 import { useParams } from "react-router-dom"
+import Desert from "../Images/Desert.jpg"
 
 
 const HomePage = () => {
@@ -16,9 +17,8 @@ const HomePage = () => {
 
     return (
         <div className='homePage'>
-        <video className=""id="video" autoPlay loop preload muted playsInline >
-        <source type="video/mp4"src="https://www.volunteerworld.com/static/banner.mp4"/>
-        </video>
+        <img className='desert' src={Desert} alt= 'desert-img'/>
+       
         <div className='contentHP'>
         <div>
         <h4>Your benefits</h4>
