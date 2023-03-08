@@ -16,6 +16,7 @@ import CSSExhange from './ExchangePage.css'
 import SearchExchange from '../Components/SearchExchange'
 
 
+
 const HomePage = () => {
 
     const {comment} = useParams()
