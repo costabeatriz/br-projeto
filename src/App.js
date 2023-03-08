@@ -21,7 +21,6 @@ function App() {
      <Header />
      <Routes>
         <Route path='/' element={ <HomePage /> } />
-        <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
         <Route path='/addnewexchange' element={ <NewExchange /> } />
         <Route path='/details/:id' element={ <ExchangeDetails /> } />
