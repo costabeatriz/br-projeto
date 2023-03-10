@@ -13,7 +13,7 @@ const SearchExchange = (props) => {
         }
 
     return (
-        <>
+        <div className='search-area'>
         <div className='input1'>
             <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">Search Agency</span>
@@ -49,7 +49,7 @@ const SearchExchange = (props) => {
                 </div>
 
         
-        </>
+        </div>
 
     )
 }

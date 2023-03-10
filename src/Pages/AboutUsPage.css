@@ -1,15 +1,8 @@
 .aboutUs{
     width: 100vw;
-    
+    background-color: rgb(246, 245, 241);
 }
-.background{
-    width: 100vw;
-    height: 50vh;
-    object-fit: cover;
-    position:relative;
-    top: 0;
-    left: 0;
-}
+
 
 .content{
     display: flex;
