@@ -1,23 +1,15 @@
-.input1 {
-    padding: 1% 1%;
-    width: 30vw;
-    float: left;
-    display: flexbox;
+lines (10 sloc)  166 Bytes
 
-
-}
-
-.input2 {
-    padding: 1% 1%;
-    width: 30vw;
-    float: right;
-    display: flexbox;
-
+.input-group mb-3 {
+    padding: 5% 10%;
+    width: 60vw;
 
 }
+
 .input-group-text{
-    border-radius: 10px;
-
+    border-radius: 20px;
 }
 
-
+.search-area{
+    background-color: rgb(246, 245, 241);
+}

@@ -11,6 +11,7 @@ import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
 import SearchExchange from './Components/SearchExchange';
 import Footer from './Components/Footer';
+import LoginPage from './Pages/LoginPage';
 
 
 
@@ -21,11 +22,13 @@ function App() {
      <Header />
      <Routes>
         <Route path='/' element={ <HomePage /> } />
+        <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
         <Route path='/addnewexchange' element={ <NewExchange /> } />
         <Route path='/details/:id' element={ <ExchangeDetails /> } />
         <Route path='/agencies' element={ < Agencies /> } />
         <Route path='/edit/:id' element={ < EditExchange /> } />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
      <Footer/>
     </div>

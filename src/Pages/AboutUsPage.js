@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom'
 import VolunteerImage from '../Images/Volunteer-background.jpg'
-import Background from '../Images/background.png'
 import CSS from './AboutUsPage.css'
 import OurMission from '../Images/ourMission.webp'
 import Globe from '../Images/icon-globe.svg'
 import Computer from '../Images/computer.png'
-import Fundo1 from '../Images/Fundo1.jpg'
+import AboutUs from '../Images/aboutUs.jpg'
 
 const AboutUsPage = () => {
     return (
            <div className='aboutUs'> 
-            <img src={Background} alt='Background' className='background'/>
+            <img src={AboutUs} alt='Background' className='background'/>
             <div className='content'>
             <div className='ourMission'>
-            <img src={Computer} alt='ourMissionImage' className='computer-img'/> 
+             
             <div>
             <h4> OUR MISSION</h4>
             <p>It happens hundreds of times each month: a volunteer 
@@ -27,7 +26,7 @@ const AboutUsPage = () => {
             </div>  
             </div>
             <div className='platform'>
-            <img src={Globe} alt='globeImage' className='globe-img'/> 
+            
             <div>
             <h4> WHAT ARE WE DOING BR VOLUNTEER?</h4>
             <p>We are launching a Volunteer Platform, we've
