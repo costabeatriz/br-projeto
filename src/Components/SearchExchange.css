@@ -1,11 +1,14 @@
+lines (10 sloc)  166 Bytes
+
 .input-group mb-3 {
     padding: 5% 10%;
-    width: 60vw;
+    width: 30vw;
 
 }
 
 .input-group-text{
     border-radius: 20px;
+    display: inline-flex;
 }
 
 .search-area{

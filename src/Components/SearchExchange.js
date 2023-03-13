@@ -13,9 +13,8 @@ const SearchExchange = (props) => {
         }
 
     return (
-        <div className='search-area'>
-        <div className='input1'>
-            <div className="input-group mb-3">
+        <>
+                <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">Search Agency</span>
                             <input
                                 type="text"
@@ -27,13 +26,12 @@ const SearchExchange = (props) => {
                                 onChange={searchHandle}
                             />
 
-        </div>
+                            
 
                             
                 </div>
-                <div className='input2'>
-                    <div className="input-group mb-3">
-                    <span className="input-group-text" id="basic-addon1">Search Destiny</span>
+                <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">Search Destiny</span>
                             <input
                                 type="text"
                                 className="form-control"
@@ -45,11 +43,8 @@ const SearchExchange = (props) => {
                             />
 
                 </div>
-
-                </div>
-
         
-        </div>
+        </>
 
     )
 }

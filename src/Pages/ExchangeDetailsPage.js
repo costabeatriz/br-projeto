@@ -8,7 +8,7 @@ const ExchangeDetails = () => {
     const [exchange, setExchange] = useState(null)
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/${id}`)
 
         .then(response => {
             setExchange(response.data)
@@ -28,7 +28,7 @@ const ExchangeDetails = () => {
         </div>
         <div className='col'>  
         <p><b>agency</b>: {exchange.agency}</p>
-        <p><b>city</b>: {exchange.city}</p>
+        <p><b>cy</b>: {exchange.city}</p>it
         <p><b>price</b>: {exchange.price}USD</p>
         <p><b>volunteer info</b>: {exchange.volunteerJobInfo}</p>
         <p><b>included meals</b>: {exchange.includedMeals}</p>
