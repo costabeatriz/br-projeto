@@ -9,7 +9,6 @@ import ExchangeDetails from './Pages/ExchangeDetailsPage';
 import NewExchange from './Pages/NewExchange';
 import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
-import SearchExchange from './Components/SearchExchange';
 import Footer from './Components/Footer';
 import LoginPage from './Pages/LoginPage';
 

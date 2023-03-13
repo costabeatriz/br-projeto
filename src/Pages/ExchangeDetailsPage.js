@@ -8,7 +8,7 @@ const ExchangeDetails = () => {
     const [exchange, setExchange] = useState(null)
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/${id}`)
 
         .then(response => {
             setExchange(response.data)
