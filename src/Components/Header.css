@@ -6,7 +6,8 @@
     position: fixed;
     top: 0;
     z-index: 3;
-
+    margin-top: 30px;
+    justify-content: space-between;
 }
 
 .logo{
@@ -18,7 +19,6 @@
 
 .buttons{
     margin-top: 5px;
-    margin-right: 5px;
     display: flex;
     justify-content: end;
     width: 90vw;
@@ -33,7 +33,7 @@ button{
     background:none;
     border-style: hidden;
     color: rgb(95, 93, 93);
-    margin-right: 5px;
+    margin-left: 15px;
     font-weight: 500;
 }
 
