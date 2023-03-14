@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import Password from 'antd/es/input/Password'
 
 const CreateUserPage = props => {
     const [name, setName] = useState('')
@@ -7,12 +8,13 @@ const CreateUserPage = props => {
     const [telephone, setTelephone] = useState('')
     const [cpf, setCPF] = useState('')
     const [cnpj, setCNPJ] = useState('')
+    const [password, setPassword] = useState('')
     const [picture, setPicture] = useState('')
     const [userP, setUserP] = useState(true)
 
     const handleUpload = e => {
         const uploadData = new FormData()
-        uploadData.append('moviePoster', e.target.files[0])
+        uploadData.append('pictureUser', e.target.files[0])
         axios.post(`${process.env.REACT_APP_API_URL}/user/upload`, uploadData)
             .then(response => {
                 setPicture(response.data.url)
@@ -29,7 +31,8 @@ const CreateUserPage = props => {
             telephone,
             cpf,
             cnpj,
-            picture
+            picture,
+            password
         }
 
         axios.post(`${process.env.REACT_APP_API_URL}/sign-up`, newUser)
@@ -72,16 +75,16 @@ const CreateUserPage = props => {
                     />
                 </div>
                 <div class="ui fitted slider checkbox">
-                    <input value= {userP} type="checkbox" class="hidden" readonly="" tabindex="0" onChange={() => setUserP(!userP)}/><label></label></div>
+                    <input value= {userP} type="checkbox" class="" readonly="CNPJ" tabindex="CPF" onChange={() => setUserP(!userP)}/><label>CNPJ</label></div>
                         {userP ? 
                                         <div>
                                         <input 
                                             type="number" 
                                             value={cpf}
                                             onChange={e => setCPF(e.target.value)}
-                                            placeholder="Fun Facts"
+                                            placeholder="CPF"
                                         />
-                                    </div>
+                                        </div>
                                     :
                                     <div>
                                     <input 
@@ -93,6 +96,15 @@ const CreateUserPage = props => {
                                 </div>
                                     
                                     } 
+
+                                    <div>
+                                    <input 
+                                        type="password" 
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
+                                        placeholder="Password"
+                                        />
+                                    </div>
 
 
                 <div>
