@@ -11,6 +11,8 @@ import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
 import Footer from './Components/Footer';
 import LoginPage from './Pages/LoginPage';
+import CreateUserPage from './Pages/CreateUserPage';
+import UserDetailsPage from './Pages/UsersDetailsPage';
 
 
 
@@ -28,6 +30,9 @@ function App() {
         <Route path='/agencies' element={ < Agencies /> } />
         <Route path='/edit/:id' element={ < EditExchange /> } />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/sign-up' element={<CreateUserPage />} />
+        <Route path='/:id' element={<UserDetailsPage />} />
+        
       </Routes>
      <Footer/>
     </div>
