@@ -40,6 +40,7 @@ const HomePage = () => {
 
     return (
         <div className='homePage'>
+
         <img className='desert' src={Desert} alt= 'desert-img'/>
         
         <div className='exchangePage'>
