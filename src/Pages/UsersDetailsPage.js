@@ -6,6 +6,7 @@ const UserDetails = props => {
     
     const [user, setUser] = useState(null)
     const { userId } = useParams()
+    const {userD, setUserD} = useState ()
 
     const token = localStorage.getItem('token')
 
@@ -15,10 +16,10 @@ const UserDetails = props => {
 
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/${id}`, {headers})
+        axios.get(`${process.env.REACT_APP_API_URL}/${userId}`, {headers})
 
         .then(response => {
-            setExchange(response.data)
+            setUserD(response.data)
         })
         .catch(err => console.log(err))
     }, [])
