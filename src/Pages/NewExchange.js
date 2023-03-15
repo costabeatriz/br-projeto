@@ -43,7 +43,7 @@ const NewExchange = () => {
 
         }
 
-        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange)
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange, {headers})
             .then(response => {
                 navigate('/addnewexchange')
                 setAgency('')
@@ -71,7 +71,7 @@ const NewExchange = () => {
         uploadData.append('pictureExchange', e.target.files[0])
         axios.post(`${process.env.REACT_APP_API_URL}/exchange/upload`, uploadData)
             .then(response => {
-                setImage(response.data.url)
+                setPicture(response.data.url)
                 alert('upload realizado')
             })
             .catch(err => console.log(err))
