@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import CSS from './EditExchange.css'
 
 
-const EditExchange = () => {
+const EditExchange = () => {    
 
     const [agency, setAgency] = useState('')
     const [agencyName, setAgencyName] = useState('')
