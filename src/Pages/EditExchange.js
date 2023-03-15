@@ -22,6 +22,12 @@ const EditExchange = () => {
 
     const navigate = useNavigate()
 
+    const token = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': 'Bearer ' + token
+    }
+
     useEffect(() =>{
 
 
