@@ -3,14 +3,14 @@ import axios, { formToJSON } from "axios"
 import Swal from "sweetalert2"
 import CSS from './Comments.css'
 
-const Coments = (props) => {
+const Comments = (props) => {
 
     const [text, setText] = useState('')
     const [name, setName] = useState('')
     const [comments, setComments] = useState ([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/comments`)
             .then(response => {            
                 setComments(response.data)
                 })
@@ -84,4 +84,4 @@ const Coments = (props) => {
 
 }
 
-export default Coments
+export default Comments

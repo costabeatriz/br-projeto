@@ -8,14 +8,15 @@ import CSS from './EditExchange.css'
 const EditExchange = () => {
 
     const [agency, setAgency] = useState('')
+    const [agencyName, setAgencyName] = useState('')
     const [city, setCity] = useState('')
     const [price, setPrice] = useState(0)
     const [action, setAction] = useState('')
-    const [imageUrl, setImageUrl] = useState('https://via.placeholder.com/500x600')
-    const [volunteerJobInfo, setVolunteerJobInfo] = useState('')
-    const [includedMeals, setIncludedMeals] = useState('')
-    const [lodgingInfo, setlodgingInfo] = useState('')
-    const [volunteerKit, setVolunteerKit] = useState('')
+    const [picture, setPicture] = useState('https://via.placeholder.com/500x600')
+    const [jobExchange, setJobExchange] = useState('')
+    const [meal, setMeal] = useState('')
+    const [accommodationInformation, setAccommodationInformation] = useState('')
+    const [kitExchange, setKitExchange] = useState('')
 
     const {id} = useParams()
 
@@ -24,29 +25,33 @@ const EditExchange = () => {
     useEffect(() =>{
 
 
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`)
 
             .then (response => {
                 let {
                     agency,
-                    city,
-                    price,
+                    agencyName,
                     action,
-                    imageUrl,
-                    volunteerJobInfo,
-                    includedMeals,
-                    lodgingInfo,
-                    volunteerKit
+                    city,
+                    picture,
+                    jobExchange,
+                    meal,
+                    accommodationInformation,
+                    kitExchange,
+                    price                
+    
                 } = response.data
+
                 setAgency(agency)
-                setCity(city)
-                setPrice(price)
+                setAgencyName(agencyName)
                 setAction(action)
-                setImageUrl(imageUrl)
-                setVolunteerJobInfo(volunteerJobInfo)
-                setIncludedMeals(includedMeals)
-                setlodgingInfo(lodgingInfo)
-                setVolunteerKit(volunteerKit)
+                setCity(city)
+                setPicture(picture)
+                setJobExchange(jobExchange)
+                setMeal(meal)
+                setAccommodationInformation(accommodationInformation)
+                setKitExchange(kitExchange)
+                setPrice(price)
             })
 
     }, [id])
@@ -56,19 +61,20 @@ const EditExchange = () => {
 
         const updateExchange = {
             agency,
-            city,
-            price,
+            agencyName,
             action,
-            imageUrl,
-            volunteerJobInfo,
-            includedMeals,
-            lodgingInfo,
-            volunteerKit
+            city,
+            picture,
+            jobExchange,
+            meal,
+            accommodationInformation,
+            kitExchange,
+            price
 
         }
 
 
-        axios.put(`${process.env.REACT_APP_API_URL}/brproject/${id}`, updateExchange)
+        axios.put(`${process.env.REACT_APP_API_URL}/exchange/${id}`, updateExchange)
 
             .then(response => {
                 Swal.fire({
@@ -91,7 +97,7 @@ const EditExchange = () => {
             </div>
             <div className="row">
                 <div className="col">
-                    <img width={600} src={imageUrl ? imageUrl : 'https://via.placeholder.com/400x500'} alt="ImagePreview" />
+                    <img width={600} src={picture ? picture : 'https://via.placeholder.com/400x500'} alt="ImagePreview" />
                 </div>
 
                 <div className="col">
@@ -159,8 +165,8 @@ const EditExchange = () => {
                                 aria-label="ImageURL"
                                 aria-describedby="basic-addon1"
                                 id="imageUrl"
-                                value={imageUrl}
-                                onChange={e => setImageUrl(e.target.value)}
+                                value={picture}
+                                onChange={e => setPicture(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
@@ -172,12 +178,12 @@ const EditExchange = () => {
                                 aria-label="volunteerJobInfo"
                                 aria-describedby="basic-addon1"
                                 id="volunteerJobInfo"
-                                value={volunteerJobInfo}
-                                onChange={e => setVolunteerJobInfo(e.target.value)}
+                                value={jobExchange}
+                                onChange={e => setJobExchange(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Include Meals</span>
+                        <span className="input-group-text" id="basic-addon1">Meals</span>
                             <input
                                 type="text"
                                 className="form-control"
@@ -185,12 +191,12 @@ const EditExchange = () => {
                                 aria-label="includedMeals"
                                 aria-describedby="basic-addon1"
                                 id="includedMeals"
-                                value={includedMeals}
-                                onChange={e => setIncludedMeals(e.target.value)}
+                                value={meal}
+                                onChange={e => setMeal(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
-                            <span className="input-group-text" id="basic-addon1">Lodging Information</span>
+                            <span className="input-group-text" id="basic-addon1">Accommodation Information Information</span>
                             <input
                                 type="text"
                                 className="form-control"
@@ -198,8 +204,8 @@ const EditExchange = () => {
                                 aria-label="lodgingInformation"
                                 aria-describedby="basic-addon1"
                                 id="lodgingInfo"
-                                value={lodgingInfo}
-                                onChange={e => setlodgingInfo(e.target.value)}
+                                value={accommodationInformation}
+                                onChange={e => setAccommodationInformation(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
@@ -211,8 +217,8 @@ const EditExchange = () => {
                                 aria-label="includedMeals"
                                 aria-describedby="basic-addon1"
                                 id="volunteerKit"
-                                value={volunteerKit}
-                                onChange={e => setVolunteerKit(e.target.value)}
+                                value={kitExchange}
+                                onChange={e => setKitExchange(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">

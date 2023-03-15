@@ -8,7 +8,7 @@ const ExchangeDetails = () => {
     const [exchange, setExchange] = useState(null)
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`)
 
         .then(response => {
             setExchange(response.data)
@@ -24,16 +24,16 @@ const ExchangeDetails = () => {
             exchange ? (
         <>
         <div className='col'>
-            <img width={400} src={ exchange.imageUrl ? exchange.imageUrl:'https://via.placeholder.com/400x500'} alt='exchange' className='detailsPage-img'></img>
+            <img width={400} src={ exchange.picture ? exchange.picture:'https://via.placeholder.com/400x500'} alt='exchange' className='detailsPage-img'></img>
         </div>
         <div className='col'>  
-        <p><b>agency</b>: {exchange.agency}</p>
+        <p><b>agency</b>: {exchange.agencyName}</p>
         <p><b>cy</b>: {exchange.city}</p>it
         <p><b>price</b>: {exchange.price}USD</p>
-        <p><b>volunteer info</b>: {exchange.volunteerJobInfo}</p>
-        <p><b>included meals</b>: {exchange.includedMeals}</p>
-        <p><b>lodging info</b>: {exchange.lodgingInfo}</p>  
-        <p><b>what does it come with your volunteer kit?</b> {exchange.volunteerKit}</p>  
+        <p><b>volunteer info</b>: {exchange.jobExchange}</p>
+        <p><b>included meals</b>: {exchange.meal}</p>
+        <p><b>lodging info</b>: {exchange.accommodationInformation}</p>  
+        <p><b>what does it come with your volunteer kit?</b> {exchange.kitExchange}</p>  
         </div>
         </>
         ) : (
