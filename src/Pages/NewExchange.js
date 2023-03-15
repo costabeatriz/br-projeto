@@ -35,7 +35,7 @@ const NewExchange = () => {
 
         }
 
-        axios.post(`${process.env.REACT_APP_API_URL}/brproject`, newOneExchange)
+        axios.post(`${process.env.REACT_APP_API_URL}/`, newOneExchange)
             .then(response => {
                 navigate('/addnewexchange')
                 setAgency('')

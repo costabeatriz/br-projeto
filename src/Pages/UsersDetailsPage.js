@@ -16,10 +16,10 @@ const UserDetails = props => {
 
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/${userId}`, {headers})
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${userId}`, {headers})
 
         .then(response => {
-            setUserD(response.data)
+            setUser(response.data)
         })
         .catch(err => console.log(err))
     }, [])
@@ -29,7 +29,7 @@ const UserDetails = props => {
     }
 
         return (
-        <div className='exchangeDetails'>
+        <div className='userDetails'>
             <h2> WELL CAME BACK {user.name}</h2>
         
             <div className='row'>
