@@ -10,7 +10,7 @@ const Coments = (props) => {
     const [comments, setComments] = useState ([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/brprojectComents`)
+        axios.get(`${process.env.REACT_APP_API_URL}/`)
             .then(response => {            
                 setComments(response.data)
                 })
@@ -30,7 +30,7 @@ const Coments = (props) => {
         }
 
 
-        axios.post(`${process.env.REACT_APP_API_URL}/brprojectComents`, newComent)
+        axios.post(`${process.env.REACT_APP_API_URL}/`, newComent)
         .then(response => {
             setText('')
             Swal.fire({
