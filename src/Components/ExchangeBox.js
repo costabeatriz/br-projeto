@@ -10,7 +10,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
     const [toExchange, setToExchange] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange`)
         .then(response => {
             setToExchange(response.data)
         })
@@ -18,7 +18,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
     },[])
 
     const deleteExchange = exchangeId => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/brproject/${exchangeId}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/exchange/${exchangeId}`)
             .then(response => {
                 setRefreshExchange(!refreshExchange)
             })
@@ -28,10 +28,10 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
         <div className="col Agency mb-4">
             <div className="card mb-6 border-0">
                 <Link to={`/details/${exchange._id}`}>
-                    <img src={exchange.imageUrl} className="card-img" alt="..." />
+                    <img src={exchange.picture} className="card-img" alt="..." />
                 </Link>
                 <div className="card-body">
-                    <h6 className="card-title bold"> {exchange.agency}</h6>
+                    <h6 className="card-title bold"> {exchange.agencyName}</h6>
                     <p className="card-text">  {exchange.city }</p>
                     <p className="card-text">  {exchange.action }</p>
                     <p className="card-text">  {exchange.price} USD</p>

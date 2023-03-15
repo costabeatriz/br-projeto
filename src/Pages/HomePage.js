@@ -6,7 +6,7 @@ import BestPrice from '../Images/bestPrice.svg'
 import Ethical from '../Images/ethical.svg'
 import FreeService from '../Images/freeService.svg'
 import Quality from '../Images/qualityChecked.svg'
-import Coments from '../Components/Comments'
+import Comments from '../Components/Comments'
 import { useParams } from "react-router-dom"
 import Desert from "../Images/Desert.jpg"
 import ExchangeBox from '../Components/ExchangeBox'
@@ -23,7 +23,7 @@ const HomePage = () => {
     const [refreshExchange, setRefreshExchange] = useState(false)
     const [searchResult, setSearchResult] =useState(exchange)
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/brproject`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange`)
             .then(response => {
                 setExchange(response.data)
                 setSearchResult(response.data)
@@ -87,7 +87,7 @@ const HomePage = () => {
         <p>Best Price Guarantee</p>
         </article>
         </div>
-        <Coments/>
+        <Comments/>
         </div>
         </div>
        
