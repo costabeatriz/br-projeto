@@ -8,14 +8,15 @@ import Swal from 'sweetalert2';
 const NewExchange = () => {
 
     const [agency, setAgency] = useState('')
+    const [agencyName, setAgencyName] = useState('')
     const [city, setCity] = useState('')
     const [price, setPrice] = useState(0)
     const [action, setAction] = useState('')
-    const [image, setImage] = useState('https://via.placeholder.com/400x500')
-    const [volunteerJobInfo, setVolunteerJobInfo] = useState('')
-    const [includedMeals, setIncludedMeals] = useState('')
-    const [lodgingInfo, setlodgingInfo] = useState('')
-    const [volunteerKit, setVolunteerKit] = useState('')
+    const [picture, setPicture] = useState('https://via.placeholder.com/500x600')
+    const [jobExchange, setJobExchange] = useState('')
+    const [meal, setMeal] = useState('')
+    const [accommodationInformation, setAccommodationInformation] = useState('')
+    const [kitExchange, setKitExchange] = useState('')
 
     const navigate = useNavigate()
 
@@ -30,30 +31,29 @@ const NewExchange = () => {
 
         const newOneExchange = {
             agency,
-            city,
-            price,
+            agencyName,
             action,
-            image,
-            volunteerJobInfo,
-            includedMeals,
-            lodgingInfo,
-            volunteerKit
+            city,
+            picture,
+            jobExchange,
+            meal,
+            accommodationInformation,
+            kitExchange,
+            price   
 
         }
 
-
-
-        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange, {headers})
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange)
             .then(response => {
                 navigate('/addnewexchange')
                 setAgency('')
                 setCity('')
                 setPrice('')
                 setAction('')
-                setImage('https://via.placeholder.com/400x500')
-                setVolunteerJobInfo('')
-                setIncludedMeals('')
-                setVolunteerKit('')
+                setPicture('https://via.placeholder.com/400x500')
+                setJobExchange('')
+                setMeal('')
+                setKitExchange('')
                 Swal.fire({
                     title: 'Success',
                     text: 'Exchange successfully created!',
@@ -87,7 +87,8 @@ const NewExchange = () => {
             </div>
             <div className="row">
                 <div className="col">
-                    <img width={600} src={image ? image: 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
+
+                    <img width={600} src={picture ? picture : 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
                 </div>
 
                 <div className="col">
@@ -160,8 +161,8 @@ const NewExchange = () => {
                                 aria-label="volunteerJobInfo"
                                 aria-describedby="basic-addon1"
                                 id="volunteerJobInfo"
-                                value={volunteerJobInfo}
-                                onChange={e => setVolunteerJobInfo(e.target.value)}
+                                value={jobExchange}
+                                onChange={e => setJobExchange(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
@@ -173,8 +174,8 @@ const NewExchange = () => {
                                 aria-label="includedMeals"
                                 aria-describedby="basic-addon1"
                                 id="includedMeals"
-                                value={includedMeals}
-                                onChange={e => setIncludedMeals(e.target.value)}
+                                value={meal}
+                                onChange={e => setMeal(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
@@ -186,8 +187,8 @@ const NewExchange = () => {
                                 aria-label="lodgingInformation"
                                 aria-describedby="basic-addon1"
                                 id="lodgingInfo"
-                                value={lodgingInfo}
-                                onChange={e => setlodgingInfo(e.target.value)}
+                                value={accommodationInformation}
+                                onChange={e => setAccommodationInformation(e.target.value)}
                             />
                         </div>
                         <div className="input-group mb-3">
@@ -199,8 +200,8 @@ const NewExchange = () => {
                                 aria-label="includedMeals"
                                 aria-describedby="basic-addon1"
                                 id="volunteerKit"
-                                value={volunteerKit}
-                                onChange={e => setVolunteerKit(e.target.value)}
+                                value={kitExchange}
+                                onChange={e => setKitExchange(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
