@@ -11,13 +11,19 @@ const NewExchange = () => {
     const [city, setCity] = useState('')
     const [price, setPrice] = useState(0)
     const [action, setAction] = useState('')
-    const [imageUrl, setImageUrl] = useState('https://via.placeholder.com/400x500')
+    const [image, setImage] = useState('https://via.placeholder.com/400x500')
     const [volunteerJobInfo, setVolunteerJobInfo] = useState('')
     const [includedMeals, setIncludedMeals] = useState('')
     const [lodgingInfo, setlodgingInfo] = useState('')
     const [volunteerKit, setVolunteerKit] = useState('')
 
     const navigate = useNavigate()
+
+    const token = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': 'Bearer ' + token
+    }
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -27,7 +33,7 @@ const NewExchange = () => {
             city,
             price,
             action,
-            imageUrl,
+            image,
             volunteerJobInfo,
             includedMeals,
             lodgingInfo,
@@ -35,20 +41,22 @@ const NewExchange = () => {
 
         }
 
-        axios.post(`${process.env.REACT_APP_API_URL}/`, newOneExchange)
+
+
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange, {headers})
             .then(response => {
                 navigate('/addnewexchange')
                 setAgency('')
                 setCity('')
                 setPrice('')
                 setAction('')
-                setImageUrl('https://via.placeholder.com/400x500')
+                setImage('https://via.placeholder.com/400x500')
                 setVolunteerJobInfo('')
                 setIncludedMeals('')
                 setVolunteerKit('')
                 Swal.fire({
                     title: 'Success',
-                    text: 'Exchange successfully uptaded!',
+                    text: 'Exchange successfully created!',
                     icon: 'sucess',
                     confirmButtonText: 'Cool'
                   })
@@ -58,6 +66,16 @@ const NewExchange = () => {
 
     }
 
+    const handleUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append('pictureExchange', e.target.files[0])
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange/upload`, uploadData)
+            .then(response => {
+                setImage(response.data.url)
+                alert('upload realizado')
+            })
+            .catch(err => console.log(err))
+    }
 
 
     return (
@@ -69,7 +87,7 @@ const NewExchange = () => {
             </div>
             <div className="row">
                 <div className="col">
-                    <img width={600} src={imageUrl ? imageUrl : 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
+                    <img width={600} src={image ? image: 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
                 </div>
 
                 <div className="col">
@@ -129,17 +147,9 @@ const NewExchange = () => {
                             />
                         </div>
                         <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Image URL</span>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Image URL"
-                                aria-label="ImageURL"
-                                aria-describedby="basic-addon1"
-                                id="imageUrl"
-                                value={imageUrl}
-                                onChange={e => setImageUrl(e.target.value)}
-                            />
+                        <div>
+                            <input type="file" onChange={e => handleUpload(e)} />
+                        </div>
                         </div>
                         <div className="input-group mb-3">
                         <span className="input-group-text" id="basic-addon1">Volunteer Job Information</span>

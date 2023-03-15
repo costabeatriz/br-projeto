@@ -19,6 +19,7 @@ const LoginPage = props => {
             .then(response => {
                 localStorage.setItem('token', response.data.token)
                 alert('Login Ok')
+                localStorage.setItem('userType', response.data.type)
             })
             .catch(err => console.log(err))
     }
