@@ -8,6 +8,11 @@ import axios from 'axios'
 const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
 
     const [toExchange, setToExchange] = useState([])
+    const token = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': 'Bearer ' + token
+    }
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/exchange`)
@@ -18,7 +23,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
     },[])
 
     const deleteExchange = exchangeId => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/exchange/${exchangeId}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/exchange/${exchangeId}`, {headers})
             .then(response => {
                 setRefreshExchange(!refreshExchange)
             })

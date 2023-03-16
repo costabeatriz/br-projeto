@@ -22,10 +22,16 @@ const EditExchange = () => {
 
     const navigate = useNavigate()
 
+    const token = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': 'Bearer ' + token
+    }
     useEffect(() =>{
 
+        
 
-        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`, {headers})
 
             .then (response => {
                 let {
@@ -74,7 +80,7 @@ const EditExchange = () => {
         }
 
 
-        axios.put(`${process.env.REACT_APP_API_URL}/exchange/${id}`, updateExchange)
+        axios.put(`${process.env.REACT_APP_API_URL}/exchange/${id}`, updateExchange, {headers})
 
             .then(response => {
                 Swal.fire({
@@ -112,8 +118,8 @@ const EditExchange = () => {
                                 aria-label="Agency Name"
                                 aria-describedby="basic-addon1"
                                 id="Agency"
-                                value={agency}
-                                onChange={e => setAgency(e.target.value)}
+                                value={agencyName}
+                                onChange={e => setAgencyName(e.target.value)}
                             />
                         </div>
 
