@@ -35,9 +35,9 @@ const Comments = (props) => {
             setText('')
             Swal.fire({
                 title: 'Success',
-                text: 'Thank you for your comemnt :)',
+                text: 'Thank you for your comment :)',
                 icon: 'sucess',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'We appreciate you!'
               })
 
         })

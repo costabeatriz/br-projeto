@@ -20,6 +20,12 @@ const NewExchange = () => {
 
     const navigate = useNavigate()
 
+    const token = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': 'Bearer ' + token
+    }
+
     const handleSubmit = e => {
         e.preventDefault()
 
@@ -37,7 +43,7 @@ const NewExchange = () => {
 
         }
 
-        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange)
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange`, newOneExchange, {headers})
             .then(response => {
                 navigate('/addnewexchange')
                 setAgency('')
@@ -50,7 +56,7 @@ const NewExchange = () => {
                 setKitExchange('')
                 Swal.fire({
                     title: 'Success',
-                    text: 'Exchange successfully uptaded!',
+                    text: 'Exchange successfully created!',
                     icon: 'sucess',
                     confirmButtonText: 'Cool'
                   })
@@ -60,6 +66,16 @@ const NewExchange = () => {
 
     }
 
+    const handleUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append('pictureExchange', e.target.files[0])
+        axios.post(`${process.env.REACT_APP_API_URL}/exchange/upload`, uploadData)
+            .then(response => {
+                setPicture(response.data.url)
+                alert('upload realizado')
+            })
+            .catch(err => console.log(err))
+    }
 
 
     return (
@@ -71,6 +87,7 @@ const NewExchange = () => {
             </div>
             <div className="row">
                 <div className="col">
+
                     <img width={600} src={picture ? picture : 'https://via.placeholder.com/400x500'} alt="ImagePreview" className="imagePreview" />
                 </div>
 
@@ -86,8 +103,9 @@ const NewExchange = () => {
                                 aria-label="Agency Name"
                                 aria-describedby="basic-addon1"
                                 id="Agency"
-                                value={agency}
-                                onChange={e => setAgency(e.target.value)}
+                                required
+                                value={agencyName}
+                                onChange={e => setAgencyName(e.target.value)}
                             />
                         </div>
 
@@ -131,17 +149,9 @@ const NewExchange = () => {
                             />
                         </div>
                         <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Image URL</span>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Image URL"
-                                aria-label="ImageURL"
-                                aria-describedby="basic-addon1"
-                                id="imageUrl"
-                                value={picture}
-                                onChange={e => setPicture(e.target.value)}
-                            />
+                        <div>
+                            <input type="file" onChange={e => handleUpload(e)} />
+                        </div>
                         </div>
                         <div className="input-group mb-3">
                         <span className="input-group-text" id="basic-addon1">Volunteer Job Information</span>
@@ -216,3 +226,8 @@ const NewExchange = () => {
 
 
 export default NewExchange
+
+
+
+
+
