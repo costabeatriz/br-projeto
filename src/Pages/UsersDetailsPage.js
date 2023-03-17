@@ -5,7 +5,7 @@ import axios from 'axios'
 const UserDetails = props => {
     
     const [user, setUser] = useState(null)
-    const { userId } = useParams()
+    const { id } = useParams()
     const {userD, setUserD} = useState ()
 
     const token = localStorage.getItem('token')
@@ -16,7 +16,7 @@ const UserDetails = props => {
 
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/user/${userId}`, {headers})
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {headers})
 
         .then(response => {
             setUser(response.data)
