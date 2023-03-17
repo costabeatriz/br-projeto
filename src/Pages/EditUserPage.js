@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import CSS from './EditExchange.css'
+
 
 
 const EditUser = () => {
@@ -19,6 +19,7 @@ const EditUser = () => {
 
     const token = localStorage.getItem('token')
 
+    
     const headers = {
         'Authorization': 'Bearer ' + token
     }
