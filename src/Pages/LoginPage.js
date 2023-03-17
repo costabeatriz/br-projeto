@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { Link } from "react-router-dom"
 import CSS from "./LoginPage.css"
+
 const LoginPage = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -14,7 +16,7 @@ const LoginPage = props => {
             .then(response => {
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token)
-                alert('Login Ok')
+                alert(`You're now logged!`)
                 localStorage.setItem('userType', response.data.type)
             })
             .catch(err => console.log(err))
@@ -40,7 +42,8 @@ const LoginPage = props => {
                     />
                 </div>
                 <button type="submit" className='loginPage-button'>Login</button>
-            </form>
+                <Link to={`/sign-up`}><button className='sigupPage-button'>Sign up</button></Link>
+        </form> 
         </div>
     )
 }

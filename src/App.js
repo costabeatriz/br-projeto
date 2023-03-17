@@ -11,11 +11,10 @@ import Agencies from './Pages/AgencyPage';
 import EditExchange from './Pages/EditExchange';
 import Footer from './Components/Footer';
 import LoginPage from './Pages/LoginPage';
-import CreateUserPage from './Pages/CreateUserPage';
+import SignupPage from './Pages/SignupPage';
 import UserDetailsPage from './Pages/UsersDetailsPage';
 import EditUserPage from './Pages/EditUserPage';
-
-
+import IsLogged from './Components/IsLogged';
 
 function App() {
 
@@ -31,10 +30,10 @@ function App() {
         <Route path='/agencies' element={ < Agencies /> } />
         <Route path='/editexchange/:id' element={ < EditExchange /> } />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/sign-up' element={<CreateUserPage />} />
-        <Route path='/userdetails/:userId' element={<UserDetailsPage />} />
+        <Route path='/sign-up' element={<SignupPage />} />
+        <Route path='/userdetails/:id' element={<UserDetailsPage/>} />
         <Route path='/edituser/:id' element={<EditUserPage/>} />
-        
+
       </Routes>
      <Footer/>
     </div>

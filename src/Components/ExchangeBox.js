@@ -32,6 +32,8 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
             })
             .catch(err => console.log(err))
         }  
+
+
     return (
         <div className="col Agency mb-4">
             <div className="card mb-6 border-0">
@@ -44,35 +46,19 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
                     <p className="card-text">  {exchange.action }</p>
                     <p className="card-text">  {exchange.price} USD</p>
                     <div className="validation">
-                        {tokenType === 0 (
+                    {localStorage === 'cpf' &&  <>
+                    <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+                    </>}
 
-                        <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
-
-                        )
-                        
-                        },
-
-                        {tokenType === 'user' (
-
-                        <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
-
-                        )
-
-                        },
-
-                        
-
-                        
-                        {tokenType === 'agency' (
-
-                                <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> ,
-                                <Link to={`/edit/${exchange._id}`}><button>EDIT</button></Link>,
-                                <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
-
-                        )
-
-                        }
-     
+                    {localStorage === 'cnpj' && <>
+                    <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> ,
+                    <Link to={`/edit/${exchange._id}`}><button>EDIT</button></Link>,
+                    <Link to={`/details/${exchange.s_id}`}><button className="details-btn">DETAILS</button></Link>
+                    </>}
+                    
+                    {localStorage === null && <>
+                    <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+                    </>}
 
                     </div>
 
