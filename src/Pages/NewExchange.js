@@ -71,7 +71,9 @@ const NewExchange = () => {
         uploadData.append('pictureExchange', e.target.files[0])
         axios.post(`${process.env.REACT_APP_API_URL}/exchange/upload`, uploadData)
             .then(response => {
+
                 setPicture(response.data.url)
+
                 alert('upload realizado')
             })
             .catch(err => console.log(err))
@@ -103,8 +105,9 @@ const NewExchange = () => {
                                 aria-label="Agency Name"
                                 aria-describedby="basic-addon1"
                                 id="Agency"
-                                value={agency}
-                                onChange={e => setAgency(e.target.value)}
+                                required
+                                value={agencyName}
+                                onChange={e => setAgencyName(e.target.value)}
                             />
                         </div>
 
@@ -225,3 +228,7 @@ const NewExchange = () => {
 
 
 export default NewExchange
+
+
+
+

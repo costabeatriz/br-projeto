@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import CSS from './EditExchange.css'
 
 
-const EditExchange = () => {    
+const EditExchange = () => {
 
     const [agency, setAgency] = useState('')
     const [agencyName, setAgencyName] = useState('')
@@ -27,11 +27,11 @@ const EditExchange = () => {
     const headers = {
         'Authorization': 'Bearer ' + token
     }
-
     useEffect(() =>{
 
+        
 
-        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/exchange/${id}`, {headers})
 
             .then (response => {
                 let {
@@ -118,8 +118,8 @@ const EditExchange = () => {
                                 aria-label="Agency Name"
                                 aria-describedby="basic-addon1"
                                 id="Agency"
-                                value={agency}
-                                onChange={e => setAgency(e.target.value)}
+                                value={agencyName}
+                                onChange={e => setAgencyName(e.target.value)}
                             />
                         </div>
 

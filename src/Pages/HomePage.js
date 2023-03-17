@@ -20,8 +20,12 @@ const HomePage = () => {
 
     const {comment} = useParams()
     const [exchange, setExchange] = useState([])
+    const [comments, setComments] = useState ([])
     const [refreshExchange, setRefreshExchange] = useState(false)
+    const [refreshComments, setRefreshComments] =useState (false)
     const [searchResult, setSearchResult] =useState(exchange)
+
+    
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/exchange`)
             .then(response => {
@@ -30,6 +34,7 @@ const HomePage = () => {
             })
             .catch(err => console.log(err))
     }, [refreshExchange]);
+    
     const searchAgency = (p) => {
         const agencyFilter = exchange.filter(agency  => {
             return agency.agency.toLowerCase().startsWith(p.toLowerCase());
@@ -87,7 +92,10 @@ const HomePage = () => {
         <p>Best Price Guarantee</p>
         </article>
         </div>
+        <div>
         <Comments/>
+        </div>
+        
         </div>
         </div>
        
