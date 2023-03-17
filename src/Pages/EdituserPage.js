@@ -2,41 +2,65 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+
+
+
 const EditUser = () => {
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [telephone, setTelephone] = useState('')
     const [picture, setPicture] = useState('https://via.placeholder.com/500x600')
+    
+
     const {id} = useParams()
+
     const navigate = useNavigate()
+
     const token = localStorage.getItem('token')
+
+    
     const headers = {
         'Authorization': 'Bearer ' + token
     }
     useEffect(() =>{
+
+        
+
         axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {headers})
+
             .then (response => {
                 let {
                     name,
                     email,
                     telephone,
-                    picture
+                    picture               
+    
                 } = response.data
+
                 setName(name)
                 setEmail(email)
                 setTelephone(telephone)
                 setPicture(picture)
+                
             })
+
     }, [id])
+
     const handleSubmit = e => {
         e.preventDefault()
+
         const updateExchange = {
             name,
             email,
             telephone,
-            picture
+            picture   
+
         }
+
+
         axios.put(`${process.env.REACT_APP_API_URL}/user/${id}`, updateExchange, {headers})
+
             .then(response => {
                 Swal.fire({
                     title: 'Success',
@@ -46,7 +70,9 @@ const EditUser = () => {
                   })
             })
             .catch(err => console.log(err))
+
     }
+
     return (
         <div className="EditUser">
             <div className="row">
@@ -58,7 +84,9 @@ const EditUser = () => {
                 <div className="col">
                     <img width={600} src={picture ? picture : 'https://via.placeholder.com/400x500'} alt="ImagePreview" />
                 </div>
+
                 <div className="col">
+        
                     <form onSubmit={handleSubmit}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Name</span>
@@ -73,6 +101,7 @@ const EditUser = () => {
                                 onChange={e => setName(e.target.value)}
                             />
                         </div>
+
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">E-mail</span>
                             <input
@@ -116,9 +145,19 @@ const EditUser = () => {
                             <button type='submit' className='submit-btn'>Submit</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
+
     )
+
 }
+
+
+
+
+
+
+
 export default EditUser
