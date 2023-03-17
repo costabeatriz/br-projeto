@@ -37,6 +37,7 @@ const UserDetails = props => {
             </div>
             <div className="col-9">
                     <p>Name: {user.name}</p>
+                    <p>Picture: {user.picture}</p>
                     <p>Email: {user.email}</p>
                     <p>Telephone: {user.telephone}</p>
                 </div>
