@@ -13,6 +13,7 @@ import Footer from './Components/Footer';
 import LoginPage from './Pages/LoginPage';
 import CreateUserPage from './Pages/CreateUserPage';
 import UserDetailsPage from './Pages/UsersDetailsPage';
+import EditUserPage from './Pages/EditUserPage';
 
 
 
@@ -26,12 +27,13 @@ function App() {
         <Route path='/exchange' element={ <ExchangePage /> } />
         <Route path='/aboutus' element={ <AboutUsPage /> } />
         <Route path='/addnewexchange' element={ <NewExchange /> } />
-        <Route path='/details/:id' element={ <ExchangeDetails /> } />
+        <Route path='/exchangedetails/:id' element={ <ExchangeDetails /> } />
         <Route path='/agencies' element={ < Agencies /> } />
-        <Route path='/edit/:id' element={ < EditExchange /> } />
+        <Route path='/editexchange/:id' element={ < EditExchange /> } />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/sign-up' element={<CreateUserPage />} />
-        <Route path='/:userId' element={<UserDetailsPage />} />
+        <Route path='/userdetails/:userId' element={<UserDetailsPage />} />
+        <Route path='/edituser/:id' element={<EditUserPage/>} />
         
       </Routes>
      <Footer/>
