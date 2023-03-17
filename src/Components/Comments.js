@@ -3,36 +3,40 @@ import axios, { formToJSON } from "axios"
 import Swal from "sweetalert2"
 import CSS from './Comments.css'
 
-const Comments = (props) => {
+const token = localStorage.getItem('token')
 
-    const [text, setText] = useState('')
-    const [name, setName] = useState('')
-    const [comments, setComments] = useState ([])
+const headers = {
+    'Authorization': 'Bearer ' + token
+}
+const Comments = (props, {id}) => {
+
+    const [user, setUser] = useState('')
+    const [commentsAll, setCommentsAll] = useState ([])
+    const [comments, setComments] = useState ('')
+    const [refresh, setRefresh] = useState ('')
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/comments`)
             .then(response => {            
-                setComments(response.data)
+                setCommentsAll(response.data)
                 })
             
                 .catch(err => console.log(err))          
-            },[])
-            
-    
+            },[comments, setRefresh])
 
     const handleSubmitComent = e => {
         e.preventDefault()
 
         const newComent = {
-            text,
-            createAt: new Date().toJSON(),
-            name, 
+            comments,
+            user,
+            createAt: new Date().toJSON(), 
         }
 
 
-        axios.post(`${process.env.REACT_APP_API_URL}/`, newComent)
+        axios.post(`${process.env.REACT_APP_API_URL}/comments`, newComent, {headers})
         .then(response => {
-            setText('')
+            setComments('')
             Swal.fire({
                 title: 'Success',
                 text: 'Thank you for your comment :)',
@@ -40,9 +44,17 @@ const Comments = (props) => {
                 confirmButtonText: 'We appreciate you!'
               })
 
-        })
+        },)
         .catch(err => console.log(err))
     }
+
+    const deleteComments = id => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/comments/${id}`, {headers})
+            .then(response => {
+                setComments(!comments)
+            })
+            .catch(err => console.log(err))
+        }  
 
     return (
         <div className="row Comments">
@@ -52,23 +64,25 @@ const Comments = (props) => {
                        <textarea class="form-control" placeholder="Tell us about your latest adventure here with us!" id="floatingTextarea" name="text"
                         cols="30"
                         rows="3"
-                        value={text}
-                        onChange={e => setText(e.target.value)}/>
+                        value={comments}
+                        onChange={e => setComments(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                             <button type='submit' className='submit-btn'>Submit comment!</button>
                         </div>
                 </form>
                 <div>
-                    {comments && (
+                    {commentsAll && (
                         <div className="container">
                             <div className="row "> {
-                            comments.map(comment => {
+                            commentsAll.map(comment => {
                                 return (
                                     <article className="col-4 bg-white rounded mt-2 mx-2" id="colFormLabelSm"
                                     >
-                                        <p>{comment.text}</p>
+                                        <p>{comment.comments}</p>
                                         <span>{comment.createAt}</span>
+                                        <button onClick={() => deleteComments(comment._id)}>DELETE</button> 
+                                        
                                     </article>
                                 )
                             })
