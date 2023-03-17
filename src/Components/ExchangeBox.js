@@ -5,10 +5,13 @@ import { useState, useEffect} from 'react'
 import axios from 'axios'
 
 
+
 const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
 
     const [toExchange, setToExchange] = useState([])
     const token = localStorage.getItem('token')
+    const [view, setview] = useState ()
+    const tokenType = localStorage.getItem('type')
 
     const headers = {
         'Authorization': 'Bearer ' + token
@@ -40,9 +43,39 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
                     <p className="card-text">  {exchange.city }</p>
                     <p className="card-text">  {exchange.action }</p>
                     <p className="card-text">  {exchange.price} USD</p>
-                    <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> 
-                    <Link to={`/editexchange/${exchange._id}`}><button>EDIT</button></Link>
-                    <Link to={`/exchangedetails/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+                    <div className="validation">
+                        {tokenType === 0 (
+
+                        <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+
+                        )
+                        
+                        },
+
+                        {tokenType === 'user' (
+
+                        <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+
+                        )
+
+                        },
+
+                        
+
+                        
+                        {tokenType === 'agency' (
+
+                                <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> ,
+                                <Link to={`/edit/${exchange._id}`}><button>EDIT</button></Link>,
+                                <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+
+                        )
+
+                        }
+     
+
+                    </div>
+
                 </div>
                 
             </div>
