@@ -30,7 +30,7 @@ const UserDetails = props => {
 
         return (
         <div className='userDetails'>
-            <h2> WELL CAME BACK {user.name}</h2>
+            <h2> WELLCOME BACK {user.name}</h2>
         
             <div className='row'>
             <img width="100%" src={user.picture} alt="profilePhoto" />
