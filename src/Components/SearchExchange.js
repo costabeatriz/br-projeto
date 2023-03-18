@@ -13,9 +13,9 @@ const SearchExchange = (props) => {
         }
 
     return (
-        <>
-                <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">Search Agency</span>
+        <div className='search-comp'>
+            <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon1">Search by agency</span>
                             <input
                                 type="text"
                                 className="form-control"
@@ -31,7 +31,7 @@ const SearchExchange = (props) => {
                             
                 </div>
         
-        </>
+        </div>
 
     )
 }

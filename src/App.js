@@ -31,7 +31,7 @@ function App() {
         <Route path='/editexchange/:id' element={ < EditExchange /> } />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/sign-up' element={<SignupPage />} />
-        <Route path='/userdetails/:userId' element={<UserDetailsPage/>} />
+        <Route path='/userdetails/:id' element={<UserDetailsPage/>} />
         <Route path='/edituser/:id' element={<EditUserPage/>} />
 
       </Routes>

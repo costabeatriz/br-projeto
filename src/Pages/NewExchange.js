@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import css from '../Pages/NewExchange.css';
 import Swal from 'sweetalert2';
+import QuoteImg from '../Images/quote-img.jpg'
 
 
 const NewExchange = () => {
@@ -84,7 +85,7 @@ const NewExchange = () => {
         <div className="CreateExchange">
             <div className="row">
                 <div className="col">
-                    <h1> ADD A NEW EXCHANGE</h1>
+                    <h1> Add new exchange</h1>
                 </div>
             </div>
             <div className="row">
@@ -104,7 +105,7 @@ const NewExchange = () => {
                                 placeholder="-----"
                                 aria-label="Agency Name"
                                 aria-describedby="basic-addon1"
-                                id="Agency"
+                                id="agency"
                                 required
                                 value={agencyName}
                                 onChange={e => setAgencyName(e.target.value)}
@@ -119,7 +120,7 @@ const NewExchange = () => {
                                 placeholder="-----"
                                 aria-label="City Name"
                                 aria-describedby="basic-addon1"
-                                id="City"
+                                id="city"
                                 value={city}
                                 onChange={e => setCity(e.target.value)}
                             />
@@ -145,7 +146,7 @@ const NewExchange = () => {
                                 placeholder="-----"
                                 aria-label="ActionName"
                                 aria-describedby="basic-addon1"
-                                id="Action"
+                                id="action"
                                 value={action}
                                 onChange={e => setAction(e.target.value)}
                             />
@@ -200,9 +201,9 @@ const NewExchange = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="-----"
-                                aria-label="includedMeals"
+                                aria-label="kitexchange"
                                 aria-describedby="basic-addon1"
-                                id="volunteerKit"
+                                id="kitexchange"
                                 value={kitExchange}
                                 onChange={e => setKitExchange(e.target.value)}
                             />
@@ -212,7 +213,7 @@ const NewExchange = () => {
                             
                         </div>
                     </form>
-
+                    <img className='quote-img' src={QuoteImg} alt= 'quote-img'/>
                 </div>
             </div>
         </div>

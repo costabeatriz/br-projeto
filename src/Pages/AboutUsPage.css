@@ -7,14 +7,9 @@
 .content{
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
     align-items: center;
 }
 
-.computer-img{
-    width: 300px;
-    margin-right: 50px;
-}
 
 .ourMission{
     display: flex;
@@ -31,10 +26,7 @@
     text-align: left;
 }
 
-.globe-img{
-    width: 250px;
-    margin-right: 50px;
-}
+
 .platform{
     display: flex;
     flex-direction: row;   
@@ -46,4 +38,43 @@
 
 .platform h4{
     text-align: left;
+}
+
+.aboutUs span{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left:40%;
+    z-index: 3;
+    margin-top: 30px;
+    align-content: center;
+    justify-content: space-between;
+    color: white;
+    text-align: right;
+    font-size: 20px;
+}
+
+.aboutUs h1{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 1000px;
+    position: absolute;
+    top: 40%;
+    left:40%;
+    z-index: 3;
+    margin-top: 30px;
+    align-content: center;
+    justify-content: space-between;
+    color: rgb(240, 128, 68);
+    text-align: right;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.background{
+    width:100vw 
 }

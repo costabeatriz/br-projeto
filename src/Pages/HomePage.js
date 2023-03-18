@@ -44,13 +44,19 @@ const HomePage = () => {
 
     return (
         <div className='homePage'>
-
+        <div className='header-background'>
         <img className='desert' src={Desert} alt= 'desert-img'/>
-        
+        <div class="header-overlay">
+        <h1>Space.
+        Freedom.
+        Possibility.</h1>
+        <p>For those who want to go further.</p>
+        </div>
+        </div>
         <div className='exchangePage'>
             <div className='title'>
             <h4>Your 2023 adventure begins now</h4>
-            <div className=" row col-10 bg-white rounded mt-2 mx-2 ">
+            <div className=" row col-10 rounded mt-2 mx-2 search-homepage">
                 <SearchExchange searchAgency={searchAgency}/>
             { exchange.length !== 0 ? (
         <>

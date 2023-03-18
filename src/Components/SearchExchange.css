@@ -3,7 +3,6 @@ lines (10 sloc)  166 Bytes
 .input-group mb-3 {
     padding: 5% 10%;
     width: 30vw;
-
 }
 
 .input-group-text{
@@ -13,4 +12,15 @@ lines (10 sloc)  166 Bytes
 
 .search-area{
     background-color: rgb(246, 245, 241);
+}
+
+#basic-addon1{
+    background-color: rgb(240, 128, 68);
+    border: none;
+    color: white;
+}
+
+.search-comp input {
+    background-color: rgb(246, 245, 241);
+    color: white;
 }

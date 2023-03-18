@@ -1,0 +1,45 @@
+.container-signup{
+    width: 100vw;
+    padding-top: 150px;
+}
+
+.container-signup h6{
+    color: rgb(130, 109, 137);
+}
+
+.container-signup #name {
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+.container-signup #email {
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+.container-signup #telephone{
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+.container-signup #cpf{
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+.container-signup #cnpj{
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+.container-signup #password{
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.container-signup #file{
+    background-color: rgb(205, 194, 209) ;
+    border: none;
+    border-radius: 10px;
+}

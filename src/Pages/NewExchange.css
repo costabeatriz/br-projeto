@@ -1,17 +1,50 @@
 .CreateExchange h1{
-    color: gray;
+    color: rgb(130, 109, 137);
     font-size: 25px;
-    margin-bottom: 50px;
+    padding-top: 50px;
 }
 
 .CreateExchange{
-    margin: 100px;
-    background-color: rgb(226, 224, 224);
-    border-radius: 60px;
-    padding-bottom: 50px;
-    color: gray;
+    width: 100vw;
+    background-color: rgb(246, 245, 241);
+    
 }
 
 .CreateExchange span{
-    color: gray;
+    color: rgb(130, 109, 137);
+}
+
+.CreateExchange #basic-addon1{
+    background-color: rgb(130, 109, 137);
+    border: none;
+}
+
+.CreateExchange .submit-btn{
+    background-color: rgb(130, 109, 137);  
+}
+
+.CreateExchange #agency{
+    background-color: rgb(246, 245, 241);
+}
+
+.CreateExchange #city{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #price{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #action{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #volunteerJobInfo{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #includedMeals{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #lodgingInfo{
+    background-color: rgb(246, 245, 241);
+}
+.CreateExchange #volunteerKit{
+    background-color: rgb(246, 245, 241);
 }

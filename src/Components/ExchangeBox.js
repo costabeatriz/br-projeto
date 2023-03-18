@@ -60,7 +60,7 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
                     <p className="card-text">  {exchange.action }</p>
                     <p className="card-text">  {exchange.price} USD</p>
                     <div className="validation">
-                    <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
+                    <Link to={`/exchangedetails/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
                     <button  onClick={() => deleteExchange(exchange._id)} hidden = {user}>DELETE</button> ,
                     <Link to={`/editexchange/${exchange._id}`}><button hidden = {user}>EDIT</button></Link>,
 

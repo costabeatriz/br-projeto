@@ -77,7 +77,7 @@ const Comments = (props, {id}) => {
                             <div className="row "> {
                             commentsAll.map(comment => {
                                 return (
-                                    <article className="col-4 bg-white rounded mt-3 mx-3" id="colFormLabelSm" key={comment._id}
+                                    <article className="col-4 rounded mt-3 mx-3" id="colFormLabelSm" key={comment._id}
                                     >
                                         <p>{comment.comments}</p>
                                         <span>{comment.createAt}</span>

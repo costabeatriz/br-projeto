@@ -3,3 +3,14 @@
     color:white;
     border-radius: 5px;
 }
+
+#floatingTextarea {
+    width: 750px;   
+    background-color:rgb(246, 245, 241)
+}
+
+#colFormLabelSm{
+    color: white;
+    font-weight: 600;
+    background-color:rgb(184, 178, 178);
+}

@@ -5,11 +5,11 @@
 .card{
     width: 250px;
     margin-top: 50px;
-
 }
 
 .card-body{
     border: none;
+    background-color:rgb(246, 245, 241);
 }
 
 .card button{

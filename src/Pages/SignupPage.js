@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Password from 'antd/es/input/Password'
+import QuoteImg from '../Images/quote-img.jpg'
+import CSS from './SignupPage.css'
 
 const CreateUserPage = props => {
     const [name, setName] = useState('')
@@ -38,17 +40,15 @@ const CreateUserPage = props => {
         axios.post(`${process.env.REACT_APP_API_URL}/sign-up`, newUser)
             .then(response => {
                 console.log(response.data)
-                alert('Well Came!!')
+                alert('Wellcome!!')
             })
             .catch(err => console.log(err) )
     }
 
 
-    
-
     return (
-        <div className='container'>
-            <h1>Take the first Step to your future!</h1>
+        <div className='container-signup'>
+            <h6>Take the first Step to your future!</h6>
             <form onSubmit={e => handleSubmit(e)}>
                 <div>
                     <input 
@@ -56,6 +56,7 @@ const CreateUserPage = props => {
                         value={name}
                         onChange={e => setName(e.target.value)}
                         placeholder="Name"
+                        id='name'
                     />
                 </div>
             
@@ -65,6 +66,7 @@ const CreateUserPage = props => {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="Email"
+                        id='email'
                     />
                 </div>
                 <div>
@@ -73,6 +75,7 @@ const CreateUserPage = props => {
                         value={telephone}
                         onChange={e => setTelephone(e.target.value)}
                         placeholder="Telephone"
+                        id='telephone'
                     />
                 </div>
                 <div class="ui fitted slider checkbox">
@@ -84,6 +87,7 @@ const CreateUserPage = props => {
                                             value={cpf}
                                             onChange={e => setCPF(e.target.value)}
                                             placeholder="CPF"
+                                            id='cpf'
                                         />
                                         </div>
                                     :
@@ -93,6 +97,7 @@ const CreateUserPage = props => {
                                         value={cnpj}
                                         onChange={e => setCNPJ(e.target.value)}
                                         placeholder="CNPJ"
+                                        id='cnpj'
                                     />
                                 </div>
                                     
@@ -104,15 +109,17 @@ const CreateUserPage = props => {
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                         placeholder="Password"
+                                        id='password'
                                         />
                                     </div>
 
 
                 <div>
-                    <input type="file" onChange={e => handleUpload(e)} />
+                    <input type="file" id="file" onChange={e => handleUpload(e)} />
                 </div>
                 <button type="submit" disabled={!picture}>Criar</button>
             </form>
+            <img className='quote-img' src={QuoteImg} alt= 'quote-img'/>
         </div>
     )
 }

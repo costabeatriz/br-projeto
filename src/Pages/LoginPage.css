@@ -1,10 +1,18 @@
 .container-login{
-    margin-top: 100px;
+    width: 100vw;
+    padding-top: 150px;
 }
 
+.container-login h4{
+    color: rgb(130, 109, 137);
+}
 .loginPage-button{
     margin-top: 15px;
-    background-color: rgb(240, 128, 68);
+    background-color: rgb(130, 109, 137);
     color: white;
     border-radius: 10px;
+}
+
+.quote-img{
+    width:100vw
 }

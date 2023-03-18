@@ -28,7 +28,7 @@ const ExchangeDetails = () => {
         </div>
         <div className='col'>  
         <p><b>agency</b>: {exchange.agencyName}</p>
-        <p><b>cy</b>: {exchange.city}</p>it
+        <p><b>city</b>: {exchange.city}</p>
         <p><b>price</b>: {exchange.price}USD</p>
         <p><b>volunteer info</b>: {exchange.jobExchange}</p>
         <p><b>included meals</b>: {exchange.meal}</p>

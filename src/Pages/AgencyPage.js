@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom'
 import CSS from './AgencyPage.css'
 import Cardbox from '../Images/cardbox-img.png'
+import Agency from '../Images/agency.jpg'
 
 const Agencies = () => {
     return (
     <div className='agencyPage'>
     <div className='content'>
+    <img className='agency' src={Agency} alt= 'agency-img'/>
+    <h1> BR Volunteer Spirit</h1>
+    <span>It is the people that make Epic what it is. Their dedication to seeking out 
+        the most unique and enjoyable new experiences, together with their creative and 
+        friendly approach, underpin our promise to help people to do more, and be more, 
+        through travel.</span>
     <h5>Ready to promote your agency at BRV?</h5>
 
     <div className='agencyPage-body'>

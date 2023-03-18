@@ -10,9 +10,14 @@ const AboutUsPage = () => {
     return (
            <div className='aboutUs'> 
             <img src={AboutUs} alt='Background' className='background'/>
+            <h1>BR Volunteer Stories</h1>
+            <span>
+            Travel opens you up to all sorts of sensations and emotions, it is a chance to bond, explore, learn, 
+            escape and recharge your batteries. Our aim is to help travellers do and be more when they visit one 
+            of our countries. Discover what they enjoyed most on their trip, written in their own words.</span>
             <div className='content'>
             <div className='ourMission'>
-             
+            
             <div>
             <h4> OUR MISSION</h4>
             <p>It happens hundreds of times each month: a volunteer 
