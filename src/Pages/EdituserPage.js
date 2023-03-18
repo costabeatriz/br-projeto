@@ -19,6 +19,19 @@ const EditUser = () => {
 
     const token = localStorage.getItem('token')
 
+    const handleUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append('pictureUser', e.target.files[0])
+        axios.post(`${process.env.REACT_APP_API_URL}/user/upload`, uploadData)
+            .then(response => {
+
+                setPicture(response.data.url)
+
+                alert('upload realizado')
+            })
+            .catch(err => console.log(err))
+    }
+
     
     const headers = {
         'Authorization': 'Bearer ' + token
@@ -128,19 +141,10 @@ const EditUser = () => {
                                 onChange={e => setTelephone(e.target.value)}
                             />
                         </div>
-                        <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Image URL</span>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Image URL"
-                                aria-label="ImageURL"
-                                aria-describedby="basic-addon1"
-                                id="imageUrl"
-                                value={picture}
-                                onChange={e => setPicture(e.target.value)}
-                            />
+                        <div>
+                            <input type="file" onChange={e => handleUpload(e)} />
                         </div>
+
                         <div className="mb-3">
                             <button type='submit' className='submit-btn'>Submit</button>
                         </div>

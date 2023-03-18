@@ -9,14 +9,16 @@ import axios from 'axios'
 const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
 
     const [toExchange, setToExchange] = useState([])
+    const [user, setUser] = useState(true)
     const token = localStorage.getItem('token')
-    const [view, setview] = useState ()
-    const tokenType = localStorage.getItem('type')
+    const tokenType = localStorage.getItem('loggedInUse')
+    const userDetail = JSON.parse(tokenType)
+
 
     const headers = {
         'Authorization': 'Bearer ' + token
     }
-
+   
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/exchange`)
         .then(response => {
@@ -25,13 +27,25 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
         .catch(err => console.log(err))
     },[])
 
+
+    useEffect(() => {
+
+        if(userDetail.user.type === "agency"){
+            return setUser(false)
+        } else  {setUser(true)}
+    
+    },[])
+
     const deleteExchange = exchangeId => {
         axios.delete(`${process.env.REACT_APP_API_URL}/exchange/${exchangeId}`, {headers})
             .then(response => {
                 setRefreshExchange(!refreshExchange)
             })
             .catch(err => console.log(err))
-        }  
+        }
+
+     
+
 
 
     return (
@@ -46,19 +60,11 @@ const ExchangeBox = ({exchange, refreshExchange, setRefreshExchange}) => {
                     <p className="card-text">  {exchange.action }</p>
                     <p className="card-text">  {exchange.price} USD</p>
                     <div className="validation">
-                    {localStorage === 'cpf' &&  <>
                     <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
-                    </>}
+                    <button  onClick={() => deleteExchange(exchange._id)} hidden = {user}>DELETE</button> ,
+                    <Link to={`/editexchange/${exchange._id}`}><button hidden = {user}>EDIT</button></Link>,
 
-                    {localStorage === 'cnpj' && <>
-                    <button onClick={() => deleteExchange(exchange._id)}>DELETE</button> ,
-                    <Link to={`/edit/${exchange._id}`}><button>EDIT</button></Link>,
-                    <Link to={`/details/${exchange.s_id}`}><button className="details-btn">DETAILS</button></Link>
-                    </>}
-                    
-                    {localStorage === null && <>
-                    <Link to={`/details/${exchange._id}`}><button className="details-btn">DETAILS</button></Link>
-                    </>}
+                
 
                     </div>
 

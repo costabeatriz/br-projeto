@@ -1,0 +1,19 @@
+.userDetails{
+    padding: 50px;
+    background-color: gray;
+    border-radius: 15px;
+    margin: 150px;
+}
+
+.detailsPage-img{
+    border-radius: 10px;
+}
+
+.userDetails p {
+    text-align: left;
+    color: white
+}
+
+.euserDetails h2{
+    margin-bottom: 40px;
+}
