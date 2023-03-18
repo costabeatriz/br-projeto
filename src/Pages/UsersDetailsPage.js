@@ -6,7 +6,7 @@ import UsersDetailsPage from './UsersDetailsPage.css'
 const UserDetails = props => {
     
     const [user, setUser] = useState(null)
-    const { userId } = useParams()
+    const { id } = useParams()
     const {userD, setUserD} = useState ()
 
     const token = localStorage.getItem('token')
@@ -17,7 +17,7 @@ const UserDetails = props => {
 
 
     useEffect (() => { 
-        axios.get(`${process.env.REACT_APP_API_URL}/user/${userId}`, {headers})
+        axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {headers})
 
         .then(response => {
             setUser(response.data)
@@ -26,7 +26,7 @@ const UserDetails = props => {
     }, [])
 
     if(!user) {
-        return <p>I am sorry, we didnt find you, make sure than you are logged !!</p>
+        return <p>I am sorry, we didnt find you, make sure that you are logged !!</p>
             
     }
 

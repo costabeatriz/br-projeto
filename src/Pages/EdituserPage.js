@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
+import CSS from './EdituserPage.css'
 
 
 const EditUser = () => {
@@ -19,20 +19,7 @@ const EditUser = () => {
 
     const token = localStorage.getItem('token')
 
-    const handleUpload = e => {
-        const uploadData = new FormData()
-        uploadData.append('pictureUser', e.target.files[0])
-        axios.post(`${process.env.REACT_APP_API_URL}/user/upload`, uploadData)
-            .then(response => {
-
-                setPicture(response.data.url)
-
-                alert('upload realizado')
-            })
-            .catch(err => console.log(err))
-    }
-
-    
+      
     const headers = {
         'Authorization': 'Bearer ' + token
     }
@@ -59,6 +46,20 @@ const EditUser = () => {
             })
 
     }, [id])
+
+    const handleUpload = e => {
+        const uploadData = new FormData()
+        uploadData.append('pictureUser', e.target.files[0])
+        axios.post(`${process.env.REACT_APP_API_URL}/user/upload`, uploadData)
+            .then(response => {
+
+                setPicture(response.data.url)
+
+                alert('upload realizado')
+            })
+            .catch(err => console.log(err))
+    }
+
 
     const handleSubmit = e => {
         e.preventDefault()
