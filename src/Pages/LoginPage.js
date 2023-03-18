@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import CSS from "./LoginPage.css"
+import QuoteImg from '../Images/quote-img.jpg'
 
 const LoginPage = props => {
     const [email, setEmail] = useState('')
@@ -47,8 +48,9 @@ const LoginPage = props => {
                     />
                 </div>
                 <button type="submit" className='loginPage-button'>Login</button>
-                <Link to={`/sign-up`}><button className='sigupPage-button'>Sign up</button></Link>
+                <Link to={`/sign-up`}><button className='signupPage-button'>Sign up</button></Link>
         </form> 
+        <img className='quote-img' src={QuoteImg} alt= 'quote-img'/>
         </div>
     )
 }

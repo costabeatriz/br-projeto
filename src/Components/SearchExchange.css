@@ -21,7 +21,6 @@ lines (10 sloc)  166 Bytes
 }
 
 .search-comp input {
-    background-color: rgb(233, 229, 229);
-    border: none;
+    background-color: rgb(246, 245, 241);
     color: white;
 }

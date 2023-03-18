@@ -1,25 +1,64 @@
+.agencyPage{
+    width: 100vw;
+}
+
+.agencyPage h5{
+    color:rgb(126, 59, 88);
+    font-size: 40px;
+}
+
+.agencyPage h1{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 1000px;
+    position: absolute;
+    top: 30%;
+    left:10%;
+    z-index: 3;
+    margin-top: 30px;
+    align-content: center;
+    justify-content: space-between;
+    color: rgb(126, 59, 88);
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+}
+.agencyPage span{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 1000px;
+    position: absolute;
+    top: 40%;
+    left:10%;
+    z-index: 3;
+    margin-top: 30px;
+    align-content: center;
+    justify-content: space-between;
+    color: rgb(126, 59, 88);
+    font-size: 25px;
+    font-weight: 300;
+    text-align: left;
+}
+
 .agencyPage-body{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.content{
-    margin-top: 50px;
-}
-
 .questionsBox{
     margin-left: 0;
     margin-top: 50px;
     width: 500px;
-    background-color: gray;
     border-radius: 10px;
     text-align: right;
-    color: white;
+    color: rgb(126, 59, 88);
 }
 
 .addExchange-btn{
-    background-color:rgb(181, 226, 114) ;
+    background-color:rgb(181, 226, 114);
     border-radius: 5px;
     align-content: flex-end;
     color: white;
@@ -30,4 +69,3 @@
     margin-left: 50px;
 }
 
-background-color: rgb(226, 224, 224);
