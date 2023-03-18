@@ -6,6 +6,7 @@ import CSS from "./LoginPage.css"
 const LoginPage = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     const handleSubmit = e => {
         e.preventDefault()
         const payload = {
@@ -15,9 +16,13 @@ const LoginPage = props => {
         axios.post(`${process.env.REACT_APP_API_URL}/login`, payload)
             .then(response => {
                 console.log(response.data)
+                console.log (JSON.stringify({...response.data}))
                 localStorage.setItem('token', response.data.token)
+                //localStorage.setItem('userType', response.data.user.type)
+                localStorage.setItem("loggedInUse",JSON.stringify({...response.data}))
                 alert(`You're now logged!`)
-                localStorage.setItem('userType', response.data.type)
+                
+                
             })
             .catch(err => console.log(err))
     }

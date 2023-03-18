@@ -7,12 +7,17 @@ const Agencies = () => {
     <div className='agencyPage'>
     <div className='content'>
     <h5>Ready to promote your agency at BRV?</h5>
-    <Link to='/addnewexchange'>
-    <button type='button' className='addExchange-btn'>Add new Exchange</button>
-    </Link>
+
     <div className='agencyPage-body'>
     <div className='questionsBox'>
+    <div>
+    <Link to='/addnewexchange'>
+    <button type='button' className='addExchange-btn'>Add new Exchange</button>
+    </Link> 
+    </div>
+    
     <h5>Your questions, answered</h5>
+
     <p><b>Is my agency rigth for BRV?</b></p>
     <p>BRV volunteers are interested in all kinds of exchanges. We have tiny agencies to big ones with all sorts of exchanges options.</p>
     <p><b>Do I have to have exchanges all the time?</b></p>
@@ -25,6 +30,8 @@ const Agencies = () => {
     <div>
         <img className="cardbox" src={Cardbox} alt="Card box iamge"/>
     </div>
+
+
     </div>
     </div>
 </div>     
@@ -33,9 +40,5 @@ const Agencies = () => {
 
 export default Agencies
 
-/*<Link to='/addnewexchange'>Add 
-    </Link>
-    <Link to='/addnewexchange'>
-    <button type='button' onClick={ () => {console.log('entrei')}} className='addExchange-btn'>Add new Exchange</button>
-    </Link>*/
+/**/
 

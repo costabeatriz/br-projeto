@@ -61,7 +61,7 @@ const Comments = (props, {id}) => {
             <div className="col">
                 <form onSubmit={handleSubmitComent}>
                     <div className="mb-3">
-                       <textarea class="form-control" placeholder="Tell us about your latest adventure here with us!" id="floatingTextarea" name="text"
+                       <textarea className="form-control" placeholder="Tell us about your latest adventure here with us!" id="floatingTextarea" name="text"
                         cols="30"
                         rows="3"
                         value={comments}
@@ -77,7 +77,7 @@ const Comments = (props, {id}) => {
                             <div className="row "> {
                             commentsAll.map(comment => {
                                 return (
-                                    <article className="col-4 bg-white rounded mt-2 mx-2" id="colFormLabelSm"
+                                    <article className="col-4 bg-white rounded mt-3 mx-3" id="colFormLabelSm" key={comment._id}
                                     >
                                         <p>{comment.comments}</p>
                                         <span>{comment.createAt}</span>

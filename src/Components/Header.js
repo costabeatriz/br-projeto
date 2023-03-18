@@ -5,6 +5,7 @@ import CSS from '../Components/Header.css'
 const Header = () => {
     return (
         <div className="header">
+
             <div className="logo">
                 <Link to='/'><img src={logo} className='logo' alt='br logo'/></Link>
                 </div>
@@ -14,7 +15,12 @@ const Header = () => {
                 <Link to='/agencies'> 
                 <button>Agencies</button></Link>
                 <Link to='/login'> 
-                <button className='login-button'>Login</button></Link> 
+                <button className='login-button'>Login</button></Link>
+                <Link to='/userdetails/:id'> 
+                <button className='profile-button'>Sign-up</button></Link> 
+                </div>
+                <div className='Title'>
+
                 </div>
         </div>
     )
